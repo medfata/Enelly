@@ -7,6 +7,9 @@
 
     <title>Enelly NFT - FAQ</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --v2-color-cyan: #61dfff;
@@ -20,6 +23,7 @@
             --v2-color-smoke: #f8f7f2;
             --v2-color-light-gray: #c3c3c3;
             --v2-color-dark-gray: #d8d8d8;
+            font-family: 'Inter', sans-serif;
         }
         .mobile-menu-enter {
             transform: translateY(100%);
@@ -108,6 +112,22 @@
             display: inline-block;
             animation: sparkle 2s ease-in-out infinite;
         }
+
+        /* Optional: Custom font weights for specific elements */
+        h1, h2 {
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-link {
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
     </style>
 </head>
 
@@ -117,8 +137,8 @@
         <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
             <nav class="mx-auto flex justify-between items-center">
                 <!-- Logo -->
-                <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity">
-                    Enelly<span class="text-[var(--v2-color-navy)]">•</span>
+                <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-start">
+                    Enelly
                 </a>
 
                 <!-- Desktop Navigation Links -->
