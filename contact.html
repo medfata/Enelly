@@ -263,7 +263,7 @@
                     contact@enellynft.xyz
                 </a>
             </p>
-            <p class="text-sm md:text-base text-[var(--v2-color-navy)] leading-relaxed px-4">
+            <p class="text-sm text-[var(--v2-color-navy)] leading-relaxed px-4">
                 We appreciate your interest and look forward to hearing from you. Our team typically responds within
                 24-48 hours.
             </p>
@@ -308,10 +308,8 @@
                 <textarea id="message" name="message" rows="6" required
                     class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] resize-none border-2 border-[var(--v2-color-icterine)]"
                     placeholder="Type your message here..."></textarea>
-                <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="messageError">Message must be at least 20 characters
-                    long</p>
+                <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="messageError">Message is required</p>
             </div>
-
             <!-- Submit Button -->
             <div class="text-center">
                 <button type="submit" class="submit-glow bg-[var(--v2-color-navy)] text-white px-8 py-3 rounded-3xl font-medium hover:bg-[var(--v2-color-indigo)] transition-colors
@@ -353,7 +351,7 @@
 
                 // Validate Message
                 const message = document.getElementById('message');
-                if (!message.value.trim() || message.value.trim().length < 20) {
+                if (!message.value.trim()) {
                     isValid = false;
                     message.classList.add('border-red-500');
                     document.getElementById('messageError').classList.remove('hidden');
@@ -378,9 +376,18 @@
                     // Send email using EmailJS
                     emailjs.send('service_dnz4tvc', 'template_3eo4xgm', templateParams)
                         .then(() => {
-                            // Success
-                            alert('Message sent successfully!');
-                            this.reset();
+                            // Replace form with thank you message
+                            const mainContent = document.querySelector('main');
+                            mainContent.innerHTML = `
+                                <div class="text-center py-16 px-4 space-y-6">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-[var(--v2-color-navy)]">
+                                        Thank You!
+                                    </h2>
+                                    <a href="/" class="inline-block mt-8 text-[var(--v2-color-navy)] hover:text-[var(--v2-color-indigo)] transition-colors">
+                                        ← Back to Home
+                                    </a>
+                                </div>
+                            `;
                         })
                         .catch((error) => {
                             // Error
