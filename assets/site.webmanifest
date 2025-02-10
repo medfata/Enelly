@@ -1,0 +1,41 @@
+{
+    "name": "Enelly NFT",
+    "short_name": "Enelly",
+    "description": "Enelly NFT - An innovative NFT project on Linea Chain",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#61dfff",
+    "theme_color": "#61dfff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "./assets/enelly_logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./assets/enelly_logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["nft", "crypto", "blockchain"],
+    "lang": "en",
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "shortcuts": [
+        {
+            "name": "FAQ",
+            "url": "/faq.html",
+            "description": "Frequently Asked Questions"
+        },
+        {
+            "name": "Contact",
+            "url": "/contact.html",
+            "description": "Contact Us"
+        }
+    ]
+} 
