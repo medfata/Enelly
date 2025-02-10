@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Enelly NFT - FAQ</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/enelly_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/enelly_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/enelly_logo.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#61dfff">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Enelly NFT - FAQ">
+    <meta property="og:description" content="Frequently Asked Questions about Enelly NFT project on Linea Chain">
+    <meta property="og:image" content="./assets/enelly_logo.png">
+    <meta property="og:url" content="https://enellynft.xyz">
+
+    <title>Enelly - Frequently Asked Questions (FAQ)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,108 +38,27 @@
             --v2-color-dark-gray: #d8d8d8;
             font-family: 'Inter', sans-serif;
         }
+
         .mobile-menu-enter {
             transform: translateY(100%);
             opacity: 0;
             transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         }
-        
+
         .mobile-menu-enter-active {
             transform: translateY(0);
             opacity: 1;
         }
-        
+
         .mobile-menu-exit {
             transform: translateY(0);
             opacity: 1;
             transition: transform 0.3s ease-in, opacity 0.3s ease-in;
         }
-        
+
         .mobile-menu-exit-active {
             transform: translateY(100%);
             opacity: 0;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.2); }
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-5px) rotate(5deg); }
-        }
-
-        .emoji-bounce {
-            display: inline-block;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        .emoji-sparkle {
-            display: inline-block;
-            animation: sparkle 1.5s ease-in-out infinite;
-        }
-
-        .emoji-think {
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .emoji-star {
-            display: inline-block;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .emoji-chain {
-            display: inline-block;
-            animation: shake 2s ease-in-out infinite;
-        }
-
-        .emoji-tool {
-            display: inline-block;
-            animation: shake 2s ease-in-out infinite;
-        }
-
-        .emoji-check {
-            display: inline-block;
-            animation: bounce 1.5s ease-in-out infinite;
-        }
-
-        .emoji-money {
-            display: inline-block;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        /* Optional: Custom font weights for specific elements */
-        h1, h2 {
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .nav-link {
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        .logo-text {
-            font-weight: 600;
-            letter-spacing: -0.02em;
         }
     </style>
 </head>
@@ -137,8 +69,11 @@
         <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
             <nav class="mx-auto flex justify-between items-center">
                 <!-- Logo -->
-                <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-start">
-                    Enelly
+                <a href="/"
+                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-[var(--v2-color-navy)]">
+                    <span class="font-semibold tracking-tight text-sm md:text-base">Enelly</span>
                 </a>
 
                 <!-- Desktop Navigation Links -->
@@ -163,11 +98,12 @@
                         class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
                         ∘ Our Team
                     </a>
-                    <a href="#contact"
+                    <a href="contact.html"
                         class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
                         ∘ Contact
                     </a>
-                    <a href="#faq"
+
+                    <a href="faq.html"
                         class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
                         aria-current="page">
                         • FAQ
@@ -227,11 +163,11 @@
                 class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Our Team
             </a>
-            <a href="#contact"
+            <a href="contact.html"
                 class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Contact
             </a>
-            <a href="#faq"
+            <a href="faq.html"
                 class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
                 aria-current="page">
                 • FAQ
@@ -274,60 +210,115 @@
     </script>
 
     <!-- Main Content -->
-    <main class="md:max-w-[670px] text-center mx-auto px-4 py-8">
+    <main class="md:max-w-[800px] text-center mx-auto px-4 py-8">
         <h1 class="text-2xl md:text-3xl font-bold text-center text-[var(--v2-color-navy)] mb-6 md:mb-8">
-            Enelly NFT FAQ <span class="emoji-bounce">🐐</span><span class="emoji-sparkle">✨</span>
+            Enelly - Frequently Asked Questions (FAQ) 📌
         </h1>
 
         <div class="md:w-xl mx-auto">
             <!-- FAQ Items -->
             <div class="p-4 md:p-6">
-
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What is Enelly? <span class="emoji-think">🤔</span></h2>
-                <p class="text-sm md:text-base ">Enelly is an innovative NFT project launching on Linea Chain, combining unique art, strong community values, and real utility. It's inspired by the GOAT (Greatest of All Time) but with its own vision and branding. 🎨🚀</p>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What is Enelly?</h2>
+                <p class="text-sm md:text-base font-bold">Enelly is an innovative NFT project launching on Linea Chain,
+                    inspired by GOAT but with its own unique vision, branding, and utility. It aims to bring real value
+                    to holders beyond just being a profile picture.</p>
             </div>
 
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What makes Enelly
+                    unique?</h2>
+                <ul class="flex flex-col gap-2 text-sm md:text-base mx-auto w-fit font-bold">
+                    <li class="flex items-center gap-2">✅ Strong Community & Ecosystem</li>
+
+                    <li class="flex items-center gap-2">✅ Real Utility for Holders</li>
+                    <li class="flex items-center gap-2">✅ Integration with the Linea Chain ecosystem.</li>
+                </ul>
+            </div>
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">
+                    More details on how we'll reward our holders will be shared soon! 👀
+                </h2>
+            </div>
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What blockchain is
+                    Enelly on?</h2>
+                <p class="text-sm md:text-base font-bold">Enelly is launching on Linea Chain, known for its scalability,
+                    low fees, and security.</p>
+            </div>
 
             <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What makes Enelly unique? <span class="emoji-star">🌟</span></h2>
-                <ul class="flex flex-col gap-2 text-sm md:text-base items-center">
-                    <li class="flex items-center gap-2">Strong Community & Ecosystem 👥🌍</li>
-                    <li class="flex items-center gap-2">Real Utility for Holders 💎🔑</li>
-                    <li class="flex items-center gap-2">Integration with the Linea Chain ecosystem. ⛓️💻</li>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What is the total
+                    supply of Enelly NFTs?</h2>
+                <p class="text-sm md:text-base font-bold">The official supply will be revealed soon. Stay tuned for
+                    details!</p>
+            </div>
+
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">How can I mint an
+                    Enelly NFT?</h2>
+                <ul class="flex flex-col gap-2 text-sm md:text-base mx-auto w-fit font-bold">
+                    <li class="flex items-center gap-2">✅ Follow our official Twitter and Discord for mint details.</li>
+                    <li class="flex items-center gap-2">✅ Get whitelisted for early access (more details below).</li>
+                    <li class="flex items-center gap-2">✅ Mint directly from a launchpad—details will be announced soon!
+                    </li>
                 </ul>
             </div>
 
             <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What blockchain is Enelly on? <span class="emoji-chain">🔗</span></h2>
-                <p class="text-sm md:text-base">Enelly will be launched on Linea Chain, known for its scalability, low fees, and security. 🚀💸</p>
-            </div>
-
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What's the utility for Enelly holders? <span class="emoji-tool">🛠️</span></h2>
-                <ul class="flex flex-col gap-2 text-sm md:text-base items-center ">
-                    <li class="flex items-center gap-2">Airdrops & Rewards 🪂🎁</li>
-                    <li class="flex items-center gap-2">Staking Opportunities 💰🔒</li>
-                    <li class="flex items-center gap-2">Access to Exclusive Drops 🎨🔓</li>
-                    <li class="flex items-center gap-2">Integration into the Linea Ecosystem. ⛓️🌐</li>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Will there be
+                    whitelist (WL) opportunities?</h2>
+                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold">Yes! Early supporters and community members will
+                    get WL spots. You can secure one by:</p>
+                <ul class="flex flex-col gap-2 text-sm md:text-base mx-auto w-fit font-bold">
+                    <li class="flex items-center gap-2">✅ Being active in our community</li>
+                    <li class="flex items-center gap-2">✅ Participating in events & giveaways</li>
+                    <li class="flex items-center gap-2">✅ Supporting the project before launch</li>
                 </ul>
             </div>
 
             <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Will there be whitelist opportunities? <span class="emoji-check">✅</span></h2>
-                <p class="mb-3 md:mb-4 text-sm md:text-base font-medium">Yes! Whitelist spots will be available for early supporters and community members. Here's how you can secure one:</p>
-                <ul class="flex flex-col gap-2 text-sm md:text-base items-center ">
-                    <li class="flex items-center gap-2">Be active in our community 🗣️👋</li>
-                    <li class="flex items-center gap-2">Participate in giveaways and events 🎁🎊</li>
-                    <li class="flex items-center gap-2">Show your support before the launch. 💪❤️</li>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What's the utility
+                    for Enelly holders?</h2>
+                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold">We're creating real utility for holders. Some
+                    potential benefits include:</p>
+                <ul class="flex flex-col gap-2 text-sm md:text-base mx-auto w-fit font-bold">
+                    <li class="flex items-center gap-2">✅ Airdrops & Rewards</li>
+                    <li class="flex items-center gap-2">✅ Staking Opportunities</li>
+                    <li class="flex items-center gap-2">✅ Access to Exclusive Drops</li>
+                    <li class="flex items-center gap-2">✅ Integration into the Linea Ecosystem</li>
                 </ul>
+                <p class="mt-3 md:mt-4 text-sm md:text-base font-bold text-[var(--v2-color-indigo)]">More details will
+                    be announced soon!</p>
             </div>
 
             <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Do you plan to launch a token? <span class="emoji-money">💰</span></h2>
-                <p class="text-sm md:text-base ">Yes, we are planning to launch a token for Enelly! We'll be doing a 100% airdrop for our NFT holders as part of the token release. More details will follow soon! 🪂🚀</p>
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">How can I trade
+                    Enelly NFTs?</h2>
+                <p class="text-sm md:text-base font-bold">After launch, Enelly NFTs will be tradable on major NFT
+                    marketplaces that support Linea Chain.</p>
             </div>
 
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Are there any
+                    partnerships or collaborations?</h2>
+                <p class="text-sm md:text-base font-bold">Yes! We are working on collaborations within the NFT & Web3
+                    space to bring even more value to our holders. Stay tuned for announcements!</p>
+            </div>
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Is the Mint Paid?
+                </h2>
+                <p class="text-sm md:text-base font-bold">Yes, the mint will be paid. However, whitelisted individuals
+                    will receive a significant discount on the mint price. The exact pricing details will be announced
+                    closer to the mint date. Stay tuned for further updates!</p>
+            </div>
 
+            <div class="p-4 md:p-6">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Do you plan to launch
+                    a token?</h2>
+                <p class="text-sm md:text-base font-bold">Yes! We are planning to launch a token, and we will be doing a
+                    100 of 100 airdrop for our holders. This will give holders exclusive access and rewards. More
+                    details will be shared closer to the launch!</p>
+            </div>
         </div>
     </main>
 
@@ -336,27 +327,23 @@
         <div class="container mx-auto text-center">
             <div class="flex justify-center gap-6 mb-6">
                 <!-- X (Twitter) -->
-                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/EnellyNFT" class="hover:opacity-70 transition-opacity" target="_blank"
+                    rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
                 </a>
 
                 <!-- Discord -->
                 <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-                    </svg>
-                </a>
-
-                <!-- Telegram -->
-                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345c-.48.33-.913.49-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789c.027-.216.325-.437.893-.663c3.498-1.524 5.83-2.529 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                     </svg>
                 </a>
             </div>
-            <p class="text-sm">&copy; 2024 Enelly NFT. All rights reserved.</p>
+            <p class="text-sm">&copy; 2025 Enelly NFT. All rights reserved.</p>
         </div>
     </footer>
 </body>

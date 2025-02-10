@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[var(--v2-color-cyan)] text-[var(--v2-color-black)]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/enelly_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/enelly_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/enelly_logo.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#61dfff">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Enelly NFT - Contact">
+    <meta property="og:description" content="Contact Enelly NFT project team">
+    <meta property="og:image" content="./assets/enelly_logo.png">
+    <meta property="og:url" content="https://enellynft.xyz">
+
+    <title>Enelly - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("S3RxBtIoXAx8so5eV");
+        })();
+    </script>
+    <style>
+        :root {
+            --v2-color-cyan: #61dfff;
+            --v2-color-navy: #190066;
+            --v2-color-indigo: #6119ef;
+            --v2-color-icterine: #fff068;
+            --v2-color-tangerine: #ff8d4c;
+            --v2-color-pink: #fcd6ff;
+            --v2-color-black: #121212;
+            --v2-color-white: #fff;
+            --v2-color-smoke: #f8f7f2;
+            --v2-color-light-gray: #c3c3c3;
+            --v2-color-dark-gray: #d8d8d8;
+            font-family: 'Inter', sans-serif;
+        }
+        .mobile-menu-enter {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        .mobile-menu-enter-active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu-exit {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+        }
+
+        .mobile-menu-exit-active {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        /* Futuristic input styles */
+        .nft-input {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nft-input:focus {
+            box-shadow: 0 0 15px rgba(97, 25, 239, 0.3);
+            outline: none;
+        }
+
+        .nft-input::placeholder {
+            color: rgba(25, 0, 102, 0.6);
+        }
+
+        /* Glowing submit button */
+        .submit-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .submit-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(97, 25, 239, 0.3),
+                    transparent);
+            transform: rotate(45deg);
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
+            <nav class="mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/"
+                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                        class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                    <span class="font-semibold tracking-tight text-sm">Enelly</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#game"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Game</a>
+                    <a href="#news"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        News</a>
+                    <a href="#roadmap"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="#bridges"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Bridges</a>
+                    <a href="#ourteam"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
+                        Team</a>
+                    <a href="faq.html"
+                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        FAQ</a>
+                    <a href="contact.html"
+                        class="text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
+                        aria-current="page">• Contact</a>
+                </div>
+
+                  <!-- Mobile Menu Button -->
+                  <button class="md:hidden text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity"
+                  id="mobileMenuButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-16 6h16" />
+                  </svg>
+              </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Add a spacer to prevent content from going under the fixed header -->
+    <div class="h-24"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-[var(--v2-color-icterine)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+        <div class="flex justify-between items-center mb-8">
+
+            <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl">
+                Enelly
+            </a>
+            <button class="text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6">
+            <a href="#game"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Game
+            </a>
+            <a href="#news"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ News
+            </a>
+            <a href="#roadmap"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Roadmap
+            </a>
+            <a href="#gridges"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Bridges
+            </a>
+            <a href="#ourteam"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Our Team
+            </a>
+            <a href="contact.html"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">
+                • Contact
+            </a>
+            <a href="faq.html"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                aria-current="page">
+                ∘ FAQ
+            </a>
+        </div>
+    </div>
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Trigger enter animation
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('mobile-menu-enter');
+                mobileMenu.classList.add('mobile-menu-enter-active');
+            });
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            // Trigger exit animation
+            mobileMenu.classList.remove('mobile-menu-enter-active');
+            mobileMenu.classList.add('mobile-menu-exit');
+            requestAnimationFrame(() => {
+                mobileMenu.classList.add('mobile-menu-exit-active');
+            });
+
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Reset classes for next open
+                mobileMenu.classList.remove('mobile-menu-exit', 'mobile-menu-exit-active');
+                mobileMenu.classList.add('mobile-menu-enter');
+            }, 300); // Match this with transition duration
+        });
+    </script>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-2xl md:text-4xl font-bold text-center text-[var(--v2-color-navy)] mb-8">Contact Us</h1>
+
+        <!-- Welcome Text -->
+        <div class="text-center mb-12 space-y-4">
+            <p class="text-sm md:text-base text-[var(--v2-color-navy)] leading-relaxed px-4">
+                Feel free to contact us with any questions or concerns. We're here to help and always excited to hear
+                from our community! You can use the form below or email us directly at
+                <a href="mailto:contact@enellynft.xyz"
+                    class="font-bold hover:text-[var(--v2-color-indigo)] transition-colors">
+                    contact@enellynft.xyz
+                </a>
+            </p>
+            <p class="text-sm md:text-base text-[var(--v2-color-navy)] leading-relaxed px-4">
+                We appreciate your interest and look forward to hearing from you. Our team typically responds within
+                24-48 hours.
+            </p>
+        </div>
+
+        <form class="space-y-6" action="#" method="POST" id="contactForm" novalidate>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- First Name -->
+                <div>
+                    <label for="firstName"
+                        class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Name*</label>
+                    <input type="text" id="firstName" name="firstName" required
+                        class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                        placeholder="Enter your first name">
+                    <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="firstNameError">Name is required</p>
+                </div>
+
+
+                <!-- Last Name -->
+                <div>
+                    <label for="lastName" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Last
+                        Name</label>
+                    <input type="text" id="lastName" name="lastName" required
+                        class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                        placeholder="Enter your last name">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Email
+                    Address*</label>
+                <input type="email" id="email" name="email" required
+                    class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                    placeholder="Enter your email address">
+                <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="emailError">Please enter a valid email address</p>
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label for="message" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Message*</label>
+                <textarea id="message" name="message" rows="6" required
+                    class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] resize-none border-2 border-[var(--v2-color-icterine)]"
+                    placeholder="Type your message here..."></textarea>
+                <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="messageError">Message must be at least 20 characters
+                    long</p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="submit-glow bg-[var(--v2-color-navy)] text-white px-8 py-3 rounded-3xl font-medium hover:bg-[var(--v2-color-indigo)] transition-colors
+                    border-2 border-[var(--v2-color-icterine)]">
+                    Send Message
+                </button>
+            </div>
+        </form>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Reset previous error states
+                const inputs = document.querySelectorAll('.nft-input');
+                inputs.forEach(input => {
+                    input.classList.remove('border-red-500');
+                    const errorElement = document.getElementById(`${input.id}Error`);
+                    if (errorElement) errorElement.classList.add('hidden');
+                });
+
+                // Validate First Name
+                const firstName = document.getElementById('firstName');
+                if (!firstName.value.trim()) {
+                    isValid = false;
+                    firstName.classList.add('border-red-500');
+                    document.getElementById('firstNameError').classList.remove('hidden');
+                }
+
+                // Validate Email
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+                    isValid = false;
+                    email.classList.add('border-red-500');
+                    document.getElementById('emailError').classList.remove('hidden');
+                }
+
+                // Validate Message
+                const message = document.getElementById('message');
+                if (!message.value.trim() || message.value.trim().length < 20) {
+                    isValid = false;
+                    message.classList.add('border-red-500');
+                    document.getElementById('messageError').classList.remove('hidden');
+                }
+
+                if (isValid) {
+                    // Show loading state
+                    const submitButton = document.querySelector('button[type="submit"]');
+                    const originalText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Sending...';
+
+                    // Prepare template parameters
+                    const templateParams = {
+                        firstName: firstName.value.trim(),
+                        lastName: document.getElementById('lastName').value.trim(),
+                        email: email.value.trim(),
+                        message: message.value.trim(),
+                        time: new Date().toLocaleString()
+                    };
+
+                    // Send email using EmailJS
+                    emailjs.send('service_dnz4tvc', 'template_3eo4xgm', templateParams)
+                        .then(() => {
+                            // Success
+                            alert('Message sent successfully!');
+                            this.reset();
+                        })
+                        .catch((error) => {
+                            // Error
+                            console.error('Error:', error);
+                            alert('Failed to send message. Please try again.');
+                        })
+                        .finally(() => {
+                            // Reset button state
+                            submitButton.disabled = false;
+                            submitButton.innerHTML = originalText;
+                        });
+                }
+            });
+
+            // Real-time validation as user types
+            document.querySelectorAll('.nft-input').forEach(input => {
+                input.addEventListener('input', function() {
+                    this.classList.remove('border-red-500');
+                    const errorElement = document.getElementById(`${this.id}Error`);
+                    if (errorElement) errorElement.classList.add('hidden');
+                });
+            });
+        </script>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 mt-12 text-[var(--v2-color-navy)]">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/EnellyNFT" class="hover:opacity-70 transition-opacity" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+
+                <!-- Discord -->
+                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Enelly NFT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
