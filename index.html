@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[var(--v2-color-cyan)] text-[var(--v2-color-black)]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/enelly_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/enelly_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/enelly_logo.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <meta name="theme-color" content="#61dfff">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Enelly NFT">
+    <meta property="og:description" content="Enelly NFT project on Linea Chain">
+    <meta property="og:image" content="./assets/enelly_logo.png">
+    <meta property="og:url" content="https://enellynft.xyz">
+
+    <title>Enelly NFT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --v2-color-cyan: #61dfff;
+            --v2-color-navy: #190066;
+            --v2-color-indigo: #6119ef;
+            --v2-color-icterine: #fff068;
+            --v2-color-tangerine: #ff8d4c;
+            --v2-color-pink: #fcd6ff;
+            --v2-color-black: #121212;
+            --v2-color-white: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mobile-menu-enter {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        .mobile-menu-enter-active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu-exit {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+        }
+
+        .mobile-menu-exit-active {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .hero-bg {
+            background-image: url('./assets/enelly_bg_image.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: calc(100vh);
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-image: url('./assets/enelly_bg_mobile.png');
+                background-size: cover;
+                background-position: center;
+                min-height: calc(100vh);
+                background-color: var(--v2-color-cyan);
+            }
+        }
+        .linea-badge {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
+            <nav class="mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html"
+                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                        class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                    <span class="font-semibold tracking-tight text-sm">Enelly</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#game"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Game</a>
+                    <a href="#news"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        News</a>
+                    <a href="#roadmap"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="#bridges"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Bridges</a>
+                    <a href="#ourteam"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
+                        Team</a>
+                    <a href="contact.html"
+                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                        aria-current="page">∘ Contact</a>
+                    <a href="faq.html"
+                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        FAQ</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity"
+                    id="mobileMenuButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-16 6h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-[var(--v2-color-icterine)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+        <div class="flex justify-between items-center mb-8">
+
+            <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl">
+                Enelly
+            </a>
+            <button class="text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6">
+            <a href="#game"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Game
+            </a>
+            <a href="#news"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ News
+            </a>
+            <a href="#roadmap"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Roadmap
+            </a>
+            <a href="#gridges"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Bridges
+            </a>
+            <a href="#ourteam"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Our Team
+            </a>
+            <a href="contact.html"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Contact
+            </a>
+            <a href="faq.html"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                aria-current="page">
+                ∘ FAQ
+            </a>
+        </div>
+    </div>
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Trigger enter animation
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('mobile-menu-enter');
+                mobileMenu.classList.add('mobile-menu-enter-active');
+            });
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            // Trigger exit animation
+            mobileMenu.classList.remove('mobile-menu-enter-active');
+            mobileMenu.classList.add('mobile-menu-exit');
+            requestAnimationFrame(() => {
+                mobileMenu.classList.add('mobile-menu-exit-active');
+            });
+
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Reset classes for next open
+                mobileMenu.classList.remove('mobile-menu-exit', 'mobile-menu-exit-active');
+                mobileMenu.classList.add('mobile-menu-enter');
+            }, 300); // Match this with transition duration
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main class="hero-bg flex items-center justify-center relative">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 px-4 tracking-wider">
+                Enelly on Linea
+            </h1>
+            <div class="linea-badge inline-flex items-center gap-2 px-4 py-2 rounded-full">
+                <img src="https://linea.build/favicon-32x32.png" alt="Linea Logo" class="w-5 h-5">
+                <span class="text-white font-medium">Built on Linea</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 mt-12 text-[var(--v2-color-navy)]">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/EnellyNFT" class="hover:opacity-70 transition-opacity" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+
+                <!-- Discord -->
+                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Enelly NFT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <!-- ... Same mobile menu script as contact.html ... -->
+</body>
+
+</html>
