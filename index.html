@@ -71,8 +71,8 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0.4));
+                    rgba(0, 0, 0, 0.2),
+                    rgba(0, 0, 0, 0.4));
             mix-blend-mode: multiply;
         }
 
@@ -81,6 +81,7 @@
                 background-image: url('./assets/enelly_bg_mobile.png');
             }
         }
+
         .linea-badge {
             backdrop-filter: blur(8px);
             background: rgba(255, 255, 255, 0.1);
@@ -89,34 +90,35 @@
         /* Animated Background */
         .bg-grid {
             background-size: 50px 50px;
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
             animation: grid-move 20s linear infinite;
         }
 
         .bg-glow {
-            background: radial-gradient(circle at 50% 50%, 
-                rgba(255, 255, 255, 0.15) 0%, 
-                rgba(97, 25, 239, 0.05) 25%, 
-                rgba(255, 255, 255, 0.02) 50%, 
-                transparent 100%);
+            background: radial-gradient(circle at 50% 50%,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(97, 25, 239, 0.05) 25%,
+                    rgba(255, 255, 255, 0.02) 50%,
+                    transparent 100%);
         }
 
         @keyframes grid-move {
             0% {
                 background-position: 0 0;
             }
+
             100% {
                 background-position: 50px 50px;
             }
         }
 
         .bg-lines {
-            background: linear-gradient(45deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.05) 50%, 
-                transparent 100%);
+            background: linear-gradient(45deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.05) 50%,
+                    transparent 100%);
             background-size: 200% 200%;
             animation: lines-move 15s ease infinite;
         }
@@ -125,9 +127,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -145,15 +149,20 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0);
             }
+
             25% {
                 transform: translate(50px, 50px);
             }
+
             50% {
                 transform: translate(0, 100px);
             }
+
             75% {
                 transform: translate(-50px, 50px);
             }
@@ -167,31 +176,34 @@
 
         /* Subtle Light Gradient */
         .bg-light-gradient {
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.05) 15%,
-                transparent 30%,
-                rgba(255, 255, 255, 0.05) 45%,
-                transparent 60%,
-                rgba(255, 255, 255, 0.05) 75%,
-                transparent 100%
-            );
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.05) 15%,
+                    transparent 30%,
+                    rgba(255, 255, 255, 0.05) 45%,
+                    transparent 60%,
+                    rgba(255, 255, 255, 0.05) 75%,
+                    transparent 100%);
             animation: gradient-shift 15s ease infinite;
         }
 
         @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 0%; }
-            50% { background-position: 0% 100%; }
+
+            0%,
+            100% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 0% 100%;
+            }
         }
 
         /* Soft Glow Effect */
         .glow-overlay {
-            background: radial-gradient(
-                circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(255, 255, 255, 0.1) 0%,
-                transparent 60%
-            );
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                    rgba(255, 255, 255, 0.1) 0%,
+                    transparent 60%);
         }
 
         /* Clean Orbs */
@@ -209,10 +221,13 @@
         }
 
         @keyframes gradient-x {
-            0%, 100% {
+
+            0%,
+            100% {
                 background-size: 200% 100%;
                 background-position: left center;
             }
+
             50% {
                 background-size: 200% 100%;
                 background-position: right center;
@@ -230,7 +245,7 @@
     <div class="fixed inset-0 bg-grid"></div>
     <div class="fixed inset-0 bg-glow"></div>
     <div class="fixed inset-0 bg-lines"></div>
-    
+
     <!-- Floating Orbs -->
     <div class="orb w-[400px] h-[400px] left-[-100px] top-[10%] bg-white"></div>
     <div class="orb w-[300px] h-[300px] right-[-50px] top-[30%] bg-[var(--v2-color-indigo)]"></div>
@@ -250,9 +265,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center gap-6">
-                    <a href="#game"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
-                        Game</a>
+                    <a href="/index.html"
+                        class="text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">•
+                        Home</a>
                     <a href="#news"
                         class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         News</a>
@@ -302,9 +317,9 @@
             </button>
         </div>
         <div class="flex flex-col gap-6">
-            <a href="#game"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Game
+            <a href="/index.html"
+                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">
+                • Home
             </a>
             <a href="#news"
                 class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
@@ -375,479 +390,376 @@
             <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent mix-blend-soft-light"></div>
 
             <!-- Main Content -->
-            <div class="relative z-20 text-center space-y-8">
-                <!-- Title with Light Effect -->
-                <div class="relative px-4 group">
-                    <div class="absolute -inset-2 bg-white/5 rounded-lg blur-xl group-hover:bg-white/10 transition-all duration-700"></div>
-                    <h1 class="relative text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider">
-                        <span class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-cyan)] via-white to-[var(--v2-color-icterine)] animate-gradient-x">
-                            Enelly
-                        </span>
-                        <span class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-icterine)] via-white to-[var(--v2-color-cyan)] animate-gradient-x [animation-delay:2s]">
-                            on Linea
-                        </span>
-                        <!-- Glowing Effect -->
-                        <div class="absolute -inset-2 bg-gradient-to-r from-[var(--v2-color-cyan)]/20 via-[var(--v2-color-indigo)]/20 to-[var(--v2-color-navy)]/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <!-- Animated Line -->
-                        <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--v2-color-cyan)] to-transparent opacity-50"></div>
-                    </h1>
-                </div>
-
-                <!-- Linea Badge -->
-                <div class="inline-block">
-                    <div class="linea-badge flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 group">
-                        <!-- Badge Content -->
-                        <img src="https://linea.build/favicon-32x32.png" alt="Linea Logo" 
-                             class="w-5 h-5 relative">
-                        <span class="text-white/90 font-medium tracking-wide relative">
-                            Built on Linea
-                        </span>
-                        
-                        <!-- Hover Line -->
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-white/50 group-hover:w-[calc(100%-24px)] transition-all duration-300"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Light Beams -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[var(--v2-color-cyan)]/5 via-transparent to-transparent mix-blend-overlay"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[var(--v2-color-cyan)]/5 via-transparent to-transparent mix-blend-overlay"></div>
-        </div>
-
-        <!-- Definition Section -->
-        <div class="container mx-auto px-4 py-4 md:py-8">
-            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-                <!-- Logo -->
-                <div class="md:w-1/3">
-                    <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                        class="w-[15rem] md:w-[30rem] hover:scale-105 transition-transform duration-300">
-                </div>
-
-                <!-- Text Content -->
-                <div class="md:w-2/3 space-y-8">
-                    <div class="bg-gradient-to-br from-[var(--v2-color-navy)] to-[var(--v2-color-indigo)] rounded-3xl p-8 shadow-2xl backdrop-blur-lg border border-opacity-20 border-white hover:scale-[1.02] transition-all duration-300">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-20 h-20 bg-[var(--v2-color-cyan)] rounded-full opacity-20 blur-xl"></div>
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--v2-color-icterine)] mb-4 relative">
-                                Welcome to EnellyNFT
-                            </h2>
-                            <h3 class="text-xl font-bold text-[var(--v2-color-cyan)] mb-6">
-                                The Future of Digital Collectibles on Linea Chain
-                            </h3>
-                            <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                <p class="text-base md:text-lg leading-relaxed text-white">
-                                    EnellyNFT is more than just an NFT collection – it's an ecosystem, a movement, and a gateway to exclusive opportunities in the Web3 world. Built on Linea Chain, our collection brings innovation, utility, and value to every holder. Whether you're a seasoned collector or new to NFTs, EnellyNFT is designed to provide real benefits beyond digital art.
-                                </p>
-                            </div>
+            <div class="flex md:gap-10 flex-col justify-center items-center">
+                <div class="relative z-20 text-center space-y-8">
+                    <!-- Title with Light Effect -->
+                    <div class="relative px-4 group">
+                        <div
+                            class="absolute -inset-2 bg-white/5 rounded-lg blur-xl group-hover:bg-white/10 transition-all duration-700">
                         </div>
+                        <h1 class="relative text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider">
+                            <span
+                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-cyan)] via-white to-[var(--v2-color-icterine)] animate-gradient-x">
+                                Enelly
+                            </span>
+                            <span
+                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-icterine)] via-white to-[var(--v2-color-cyan)] animate-gradient-x [animation-delay:2s]">
+                                on Linea
+                            </span>
+                            <!-- Glowing Effect -->
+                            <div
+                                class="absolute -inset-2 bg-gradient-to-r from-[var(--v2-color-cyan)]/20 via-[var(--v2-color-indigo)]/20 to-[var(--v2-color-navy)]/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                            <!-- Animated Line -->
+                            <div
+                                class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--v2-color-cyan)] to-transparent opacity-50">
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--v2-color-icterine)] relative">
+                            Welcome to EnellyNFT
+                        </h2>
+                        <h3 class="text-xl font-bold text-[var(--v2-color-cyan)] mb-4">
+                            The Future of Digital Collectibles on Linea Chain
+                        </h3>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="moving_images relative overflow-hidden py-4">
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork.png" alt="NFT Artwork 1" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_5.png" alt="NFT Artwork 3" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_8.png" alt="NFT Artwork 4" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_3.png" alt="NFT Artwork 5" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_6.png" alt="NFT Artwork 6" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_4.png" alt="NFT Artwork 7" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_9.png" alt="NFT Artwork 9" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
 
-        <div class="moving_images relative overflow-hidden py-4">
-            <!-- Images Container -->
-            <div class="slider">
-                <!-- Images -->
-                <div class="slide-track">
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork.png" alt="NFT Artwork 1" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
+                            <!-- Duplicate entire set for seamless loop -->
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork.png" alt="NFT Artwork 1" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_5.png" alt="NFT Artwork 3" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_4.png" alt="NFT Artwork 4" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_6.png" alt="NFT Artwork 6" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_7.png" alt="NFT Artwork 7" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_3.png" alt="NFT Artwork 8" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-card">
+                                <div class="image-wrapper">
+                                    <img src="./assets/Untitled_Artwork_9.png" alt="NFT Artwork 9" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
+                                    <div class="card-overlay"></div>
+                                    <div class="card-border"></div>
+                                    <div class="hover-effects">
+                                        <div class="corner-border top-left"></div>
+                                        <div class="corner-border top-right"></div>
+                                        <div class="corner-border bottom-left"></div>
+                                        <div class="corner-border bottom-right"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_3.png" alt="NFT Artwork 3" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_4.png" alt="NFT Artwork 4" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_5.png" alt="NFT Artwork 5" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_6.png" alt="NFT Artwork 6" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_7.png" alt="NFT Artwork 7" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_8.png" alt="NFT Artwork 8" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_9.png" alt="NFT Artwork 9" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork.png" alt="NFT Artwork 1" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_3.png" alt="NFT Artwork 3" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_4.png" alt="NFT Artwork 4" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="./assets/Untitled_Artwork_5.png" alt="NFT Artwork 5" class="w-64 h-64 lg:w-96 lg:h-96 object-contain">
-                            <div class="card-overlay"></div>
-                            <div class="card-border"></div>
-                            <div class="hover-effects">
-                                <div class="corner-border top-left"></div>
-                                <div class="corner-border top-right"></div>
-                                <div class="corner-border bottom-left"></div>
-                                <div class="corner-border bottom-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <style>
-                .slider {
-                    width: 100%;
-                    overflow: hidden;
-                }
+                    <style>
+                        .slider {
+                            width: 100%;
+                            overflow: hidden;
+                        }
 
-                .slide-track {
-                    display: flex;
-                    animation: scroll 20s linear infinite;
-                    width: fit-content;
-                }
+                        .slide-track {
+                            display: flex;
+                            animation: scroll 20s linear infinite;
+                        }
 
-                .slide-track:hover {
-                    animation-play-state: paused;
-                }
+                        /* Specific pause selectors */
+                        .image-card:hover ~ .slide-track,
+                        .image-card:hover,
+                        .image-wrapper:hover ~ .slide-track,
+                        .image-wrapper:hover,
+                        .slide-track:hover {
+                            animation-play-state: paused !important;
+                        }
 
-                @keyframes scroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(calc(-50%));
-                    }
-                }
+                        .slider:hover .slide-track {
+                            animation-play-state: paused !important;
+                        }
 
-                .image-card {
-                    padding: 0.5rem;
-                    flex-shrink: 0;
-                    position: relative;
-                    perspective: 1000px;
-                }
+                        .moving_images:hover .slide-track {
+                            animation-play-state: paused !important;
+                        }
 
-                .image-wrapper {
-                    position: relative;
-                    background: linear-gradient(
-                        169deg,
-                        rgba(255, 255, 255, 0.05) 0%,
-                        rgba(255, 255, 255, 0.02) 100%
-                    );
-                    border-radius: 12px;
-                    overflow: hidden;
-                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                }
+                        @keyframes scroll {
+                            0% {
+                                transform: translateX(-100%);
+                            }
+                            100% {
+                                transform: translateX(0%);
+                            }
+                        }
 
-                .card-overlay {
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(
-                        130deg,
-                        rgba(var(--v2-color-navy-rgb), 0.2),
-                        rgba(var(--v2-color-indigo-rgb), 0.1)
-                    );
-                    mix-blend-mode: overlay;
-                }
+                        .image-card {
+                            padding: 0.5rem;
+                            flex-shrink: 0;
+                            position: relative;
+                            perspective: 1000px;
+                        }
 
-                .card-border {
-                    position: absolute;
-                    inset: 0;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    border-radius: 12px;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(var(--v2-color-cyan-rgb), 0.2),
-                        transparent
-                    );
-                    mask: linear-gradient(#fff 0 0) padding-box,
-                          linear-gradient(#fff 0 0);
-                    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-                                linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: destination-out;
-                    mask-composite: exclude;
-                }
+                        .image-wrapper {
+                            position: relative;
+                            background: linear-gradient(169deg,
+                                    rgba(255, 255, 255, 0.05) 0%,
+                                    rgba(255, 255, 255, 0.02) 100%);
+                            border-radius: 12px;
+                            overflow: hidden;
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            cursor: pointer;
+                            z-index: 10;
+                        }
 
-                .hover-effects {
-                    position: absolute;
-                    inset: 0;
-                    pointer-events: none;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
+                        .card-overlay {
+                            position: absolute;
+                            inset: 0;
+                            background: linear-gradient(130deg,
+                                    rgba(var(--v2-color-navy-rgb), 0.2),
+                                    rgba(var(--v2-color-indigo-rgb), 0.1));
+                            mix-blend-mode: overlay;
+                        }
 
-                .corner-border {
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    border: 2px solid var(--v2-color-cyan);
-                    opacity: 0.7;
-                }
+                        .card-border {
+                            position: absolute;
+                            inset: 0;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 12px;
+                            background: linear-gradient(90deg,
+                                    transparent,
+                                    rgba(var(--v2-color-cyan-rgb), 0.2),
+                                    transparent);
+                        }
 
-                .top-left {
-                    top: 10px;
-                    left: 10px;
-                    border-right: 0;
-                    border-bottom: 0;
-                }
+                        .hover-effects {
+                            position: absolute;
+                            inset: 0;
+                            pointer-events: none;
+                            opacity: 0;
+                            transition: opacity 0.3s ease;
+                        }
 
-                .top-right {
-                    top: 10px;
-                    right: 10px;
-                    border-left: 0;
-                    border-bottom: 0;
-                }
+                        .corner-border {
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            border: 2px solid var(--v2-color-cyan);
+                            opacity: 0.7;
+                        }
 
-                .bottom-left {
-                    bottom: 10px;
-                    left: 10px;
-                    border-right: 0;
-                    border-top: 0;
-                }
+                        .top-left {
+                            top: 10px;
+                            left: 10px;
+                            border-right: 0;
+                            border-bottom: 0;
+                        }
 
-                .bottom-right {
-                    bottom: 10px;
-                    right: 10px;
-                    border-left: 0;
-                    border-top: 0;
-                }
+                        .top-right {
+                            top: 10px;
+                            right: 10px;
+                            border-left: 0;
+                            border-bottom: 0;
+                        }
 
-                .image-wrapper::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: radial-gradient(
-                        circle at 50% 0%,
-                        rgba(var(--v2-color-cyan-rgb), 0.1),
-                        transparent 70%
-                    );
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
+                        .bottom-left {
+                            bottom: 10px;
+                            left: 10px;
+                            border-right: 0;
+                            border-top: 0;
+                        }
 
-                .image-card:hover .image-wrapper {
-                    transform: translateY(-8px) rotateX(10deg);
-                    box-shadow: 
-                        0 5px 15px rgba(0, 0, 0, 0.3),
-                        0 0 30px rgba(var(--v2-color-cyan-rgb), 0.15);
-                }
+                        .bottom-right {
+                            bottom: 10px;
+                            right: 10px;
+                            border-left: 0;
+                            border-top: 0;
+                        }
 
-                .image-card:hover .hover-effects {
-                    opacity: 1;
-                }
+                        .image-wrapper:hover {
+                            transform: translateY(-8px) rotateX(10deg);
+                            box-shadow:
+                                0 5px 15px rgba(0, 0, 0, 0.3),
+                                0 0 30px rgba(var(--v2-color-cyan-rgb), 0.15);
+                        }
 
-                .image-card:hover .image-wrapper::before {
-                    opacity: 1;
-                }
+                        .image-wrapper:hover .hover-effects {
+                            opacity: 1;
+                        }
 
-                @media (max-width: 768px) {
-                    .image-card {
-                        padding: 0.25rem;
-                    }
-                    
-                    .corner-border {
-                        width: 15px;
-                        height: 15px;
-                    }
-                }
-            </style>
-        </div>
+                        @media (max-width: 768px) {
+                            .image-card {
+                                padding: 0.25rem;
+                            }
 
-        <!-- Features Section -->
-        <div class="container mx-auto px-4 py-16">
-            <div class="flex flex-col md:flex-row gap-8 md:gap-16">
-                <!-- Why EnellyNFT -->
-                <div class="md:w-1/2">
-                    <div class="bg-gradient-to-br from-[var(--v2-color-navy)] to-[var(--v2-color-indigo)] rounded-3xl p-8 shadow-2xl backdrop-blur-lg border border-opacity-20 border-white hover:scale-[1.02] transition-all duration-300">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-20 h-20 bg-[var(--v2-color-cyan)] rounded-full opacity-20 blur-xl"></div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-[var(--v2-color-icterine)] mb-4 relative">
-                                Why EnellyNFT?
-                            </h2>
-                            <h3 class="text-xl font-bold text-white mb-6">
-                                Your NFT, Your Key to Utility & Rewards
-                            </h3>
-                            <p class="text-base md:text-lg leading-relaxed text-[var(--v2-color-cyan)] font-medium mb-8">
-                                EnellyNFT isn't just a profile picture – it's a powerful asset that unlocks multiple benefits within our ecosystem. By holding an EnellyNFT, you gain access to an array of features designed to maximize your experience and rewards.
-                            </p>
-                            <ul class="space-y-4 text-base md:text-lg text-white">
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Exclusive Airdrops – Holders will receive $ENLY, the native token of the Enelly ecosystem.</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Staking & Passive Income – Stake your NFT and earn rewards over time.</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Priority Access – Get early entry to future drops, private sales, and exclusive events.</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>DAO Governance – Your NFT gives you voting power in important project decisions.</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Premium Marketplace Perks – Enjoy discounted fees and special listings on partnered marketplaces.</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>IRL & Virtual Events – Connect with the community in both digital and real-world experiences.</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ecosystem & Token -->
-                <div class="md:w-1/2">
-                    <div class="bg-gradient-to-bl from-[var(--v2-color-navy)] to-[var(--v2-color-indigo)] rounded-3xl p-8 shadow-2xl backdrop-blur-lg border border-opacity-20 border-white hover:scale-[1.02] transition-all duration-300">
-                        <div class="relative">
-                            <div class="absolute -top-4 -right-4 w-20 h-20 bg-[var(--v2-color-cyan)] rounded-full opacity-20 blur-xl"></div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-[var(--v2-color-icterine)] mb-4">
-                                The Enelly Ecosystem & Token ($ENLY)
-                            </h2>
-                            <p class="text-base md:text-lg leading-relaxed text-[var(--v2-color-cyan)] font-medium mb-8">
-                                At the heart of EnellyNFT is $ENLY, the token that fuels our ecosystem. By holding an EnellyNFT, you're automatically eligible for token airdrops and staking rewards.
-                            </p>
-                            <ul class="space-y-4 text-base md:text-lg text-white mb-8">
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Earn $ENLY by staking your NFT</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Use $ENLY for exclusive perks, trading, and governance</span>
-                                </li>
-                                <li class="flex items-start gap-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:border-[var(--v2-color-cyan)]/30 transition-all">
-                                    <span class="text-[var(--v2-color-icterine)]">⬢</span>
-                                    <span>Buy, sell, and trade EnellyNFTs with $ENLY on partnered marketplaces</span>
-                                </li>
-                            </ul>
-                            <p class="text-base md:text-lg leading-relaxed text-[var(--v2-color-cyan)] font-medium p-4 bg-white/5 rounded-xl border border-white/10">
-                                The more $ENLY you hold, the greater your access to premium features and rewards within the ecosystem!
-                            </p>
-                        </div>
-                    </div>
+                            .corner-border {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    </style>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -881,7 +793,7 @@
 
     <!-- Remove or replace this script -->
     <script>
-        // Only run if glowOverlay element exists
+        // Glow overlay logic
         const glowOverlay = document.querySelector('.glow-overlay');
         if (glowOverlay) {
             document.addEventListener('mousemove', (e) => {
@@ -891,6 +803,20 @@
                 glowOverlay.style.setProperty('--mouse-y', `${y}%`);
             });
         }
+
+        // Image slider animation pause logic
+        const imageWrappers = document.querySelectorAll('.image-wrapper');
+        const slideTrack = document.querySelector('.slide-track');
+
+        imageWrappers.forEach(wrapper => {
+            wrapper.addEventListener('mouseenter', () => {
+                slideTrack.style.animationPlayState = 'paused';
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                slideTrack.style.animationPlayState = 'running';
+            });
+        });
     </script>
 </body>
 
