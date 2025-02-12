@@ -818,6 +818,70 @@
             });
         });
     </script>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="fixed inset-0 z-50 flex items-center justify-center bg-[var(--v2-color-navy)] bg-opacity-90 backdrop-blur-sm">
+        <div class="text-center space-y-4">
+            <div class="relative w-64 h-2 bg-white/10 rounded-full overflow-hidden">
+                <div id="progressBar" class="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-[var(--v2-color-cyan)] to-[var(--v2-color-indigo)] transition-all duration-300"></div>
+            </div>
+            <p class="text-[var(--v2-color-icterine)] text-sm font-medium">
+                Loading NFTs... <span id="progressText">0%</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Loading indicator logic
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const images = document.querySelectorAll('img');
+        let loadedImages = 0;
+        const totalImages = images.length;
+        const requiredPercentage = 80; // Show content after 80% of images load
+
+        function updateProgress() {
+            loadedImages++;
+            const progress = (loadedImages / totalImages) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `${Math.round(progress)}%`;
+
+            // Remove loading indicator when reaching required percentage
+            if (progress >= requiredPercentage) {
+                loadingIndicator.classList.add('opacity-0');
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                }, 500); // Match transition duration
+            }
+        }
+
+        // Track loading of each image
+        images.forEach(img => {
+            if (img.complete) {
+                updateProgress();
+            } else {
+                img.addEventListener('load', updateProgress);
+                img.addEventListener('error', updateProgress); // Count errors to avoid stuck loader
+            }
+        });
+
+        // Fallback to remove loader after timeout (5 seconds)
+        setTimeout(() => {
+            if (loadingIndicator.style.display !== 'none') {
+                loadingIndicator.classList.add('opacity-0');
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                }, 500);
+            }
+        }, 5000);
+    </script>
+
+    <style>
+        #loadingIndicator {
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
 </body>
 
 </html>
