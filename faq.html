@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[var(--v2-color-cyan)] text-[var(--v2-color-black)]">
+<html lang="en" class="bg-[var(--privy-color-accent-light)] text-[var(--privy-color-foreground-accent)]">
 
 <head>
     <meta charset="UTF-8">
@@ -25,17 +25,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --v2-color-cyan: #61dfff;
-            --v2-color-navy: #190066;
-            --v2-color-indigo: #6119ef;
-            --v2-color-icterine: #fff068;
-            --v2-color-tangerine: #ff8d4c;
-            --v2-color-pink: #fcd6ff;
-            --v2-color-black: #121212;
-            --v2-color-white: #fff;
-            --v2-color-smoke: #f8f7f2;
-            --v2-color-light-gray: #c3c3c3;
-            --v2-color-dark-gray: #d8d8d8;
+            --privy-color-foreground-accent: hsl(0, 0%, 100%);
+            --privy-color-accent: hsl(172, 47%, 36%);
+            --privy-color-accent-light: hsl(172, 47%, 51%);
+            --privy-color-accent-dark: hsl(172, 47%, 30%);
+            --privy-color-success: hsl(147, 43%, 52%);
+            --privy-color-success-dark: hsl(147, 43%, 36%);
+            --privy-color-success-light: hsl(147, 43%, 92%);
+            --privy-color-error: hsl(7, 80%, 62%);
+            --privy-color-error-light: hsl(7, 80%, 92%);
+            --privy-color-warn: hsl(36, 100%, 65%);
+            --privy-color-warn-light: hsl(36, 100%, 95%);
             font-family: 'Inter', sans-serif;
         }
 
@@ -66,54 +66,44 @@
 <body>
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-        <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
+        <div class="md:w-[85rem] mx-auto bg-[var(--privy-color-success-light)] px-6 py-3 rounded-[20px] shadow-md">
             <nav class="mx-auto flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html"
-                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
                     <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                        class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-[var(--v2-color-navy)]">
+                        class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-[var(--privy-color-success-dark)]">
                     <span class="font-semibold tracking-tight text-sm md:text-base">Enelly</span>
                 </a>
 
                 <!-- Desktop Navigation Links -->
                 <div class="hidden md:flex items-center gap-6">
                     <a href="index.html"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ Home
-                    </a>
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Home</a>
                     <a href="#news"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ News
-                    </a>
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        News</a>
                     <a href="#roadmap"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ Roadmap
-                    </a>
-                    <a href="#gridges"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ Bridges
-                    </a>
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="#bridges"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Bridges</a>
                     <a href="#ourteam"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ Our Team
-                    </a>
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Our Team</a>
                     <a href="contact.html"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                        ∘ Contact
-                    </a>
-
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Contact</a>
                     <a href="faq.html"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
-                        aria-current="page">
-                        • FAQ
-                    </a>
-
+                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                        aria-current="page">•
+                        FAQ</a>
                 </div>
 
-
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity"
+                <button class="md:hidden text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity"
                     id="mobileMenuButton">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -129,16 +119,17 @@
     <div class="h-24"></div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="fixed inset-0 bg-[var(--v2-color-icterine)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+    <div class="fixed inset-0 bg-[var(--privy-color-success-light)] z-50 hidden flex-col p-6 mobile-menu-enter"
+        id="mobileMenu">
         <div class="flex justify-between items-center mb-8">
-
             <a href="index.html"
-                class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
                 <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                    class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                    class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
                 <span class="font-semibold tracking-tight text-sm">Enelly</span>
             </a>
-            <button class="text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+            <button class="text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity"
+                id="closeMenuButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -147,34 +138,27 @@
         </div>
         <div class="flex flex-col gap-6">
             <a href="index.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Home
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Home</a>
             <a href="#news"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ News
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                News</a>
             <a href="#roadmap"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Roadmap
-            </a>
-            <a href="#gridges"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Bridges
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Roadmap</a>
+            <a href="#bridges"
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Bridges</a>
             <a href="#ourteam"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Our Team
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Our Team</a>
             <a href="contact.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ Contact
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Contact</a>
             <a href="faq.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
-                aria-current="page">
-                • FAQ
-            </a>
+                class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                aria-current="page">•
+                FAQ</a>
         </div>
     </div>
 
@@ -214,47 +198,49 @@
 
     <!-- Main Content -->
     <main class="md:max-w-[800px] text-center mx-auto px-4 py-8">
-        <h1 class="text-2xl md:text-3xl font-bold text-center text-[var(--v2-color-navy)] mb-6 md:mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-[var(--privy-color-accent-dark)] mb-6 md:mb-8">
             Enelly - Frequently Asked Questions (FAQ)
         </h1>
 
-        <div class="md:w-xl mx-auto">
+        <div class="md:w-xl mx-auto space-y-4">
             <!-- FAQ Items -->
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What is Enelly?</h2>
-                <p class="text-sm md:text-base font-bold">Enelly is an innovative NFT project launching on Linea Chain,
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">What is
+                    Enelly?</h2>
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Enelly is an
+                    innovative NFT project launching on Hyperliquid Chain,
                     inspired by GOAT but with its own unique vision, branding, and utility. It aims to bring real value
                     to holders beyond just being a profile picture.</p>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What makes Enelly
-                    unique?</h2>
-                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold">
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">What makes
+                    Enelly unique?</h2>
+                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">
                     <li>Strong Community & Ecosystem</li>
                     <li>Real Utility for Holders</li>
-                    <li>Integration with the Linea Chain ecosystem.</li>
+                    <li>Integration with the Hyperliquid Chain ecosystem.</li>
                 </ul>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What blockchain is
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">What blockchain is
                     Enelly on?</h2>
-                <p class="text-sm md:text-base font-bold">Enelly is launching on Linea Chain, known for its scalability,
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Enelly is launching on Linea Chain, known for its scalability,
                     low fees, and security.</p>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What is the total
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">What is the total
                     supply of Enelly NFTs?</h2>
-                <p class="text-sm md:text-base font-bold">The official supply will be revealed soon. Stay tuned for
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">The official supply will be revealed soon. Stay tuned for
                     details!</p>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">How can I mint an
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">How can I mint an
                     Enelly NFT?</h2>
-                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold">
+                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">
                     <li>
                         Follow our official Twitter and Discord for mint details.
                     </li>
@@ -268,12 +254,12 @@
 
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Will there be
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">Will there be
                     whitelist (WL) opportunities?</h2>
-                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold">Yes! Early supporters and community members will
+                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Yes! Early supporters and community members will
                     get WL spots. You can secure one by:</p>
-                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold">
+                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">
                     <li>Being active in our community</li>
                     <li>Participating in events & giveaways</li>
                     <li>Supporting the project before launch</li>
@@ -281,47 +267,47 @@
 
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">What's the utility
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">What's the utility
                     for Enelly holders?</h2>
-                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold">We're creating real utility for holders. Some
+                <p class="mb-3 md:mb-4 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">We're creating real utility for holders. Some
                     potential benefits include:</p>
-                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold">
+                <ul class="flex flex-col gap-2 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">
                     <li>Airdrops & Rewards</li>
                     <li>Staking Opportunities</li>
                     <li>Access to Exclusive Drops</li>
                     <li>Integration into the Linea Ecosystem</li>
                 </ul>
-                <p class="mt-3 md:mt-4 text-sm md:text-base font-bold">More details will
+                <p class="mt-3 md:mt-4 text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">More details will
                     be announced soon!</p>
 
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">How can I trade
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">How can I trade
                     Enelly NFTs?</h2>
-                <p class="text-sm md:text-base font-bold">After launch, Enelly NFTs will be tradable on major NFT
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">After launch, Enelly NFTs will be tradable on major NFT
                     marketplaces that support Linea Chain.</p>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Are there any
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">Are there any
                     partnerships or collaborations?</h2>
-                <p class="text-sm md:text-base font-bold">Yes! We are working on collaborations within the NFT & Web3
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Yes! We are working on collaborations within the NFT & Web3
                     space to bring even more value to our holders. Stay tuned for announcements!</p>
             </div>
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Is the Mint Paid?
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">Is the Mint Paid?
                 </h2>
-                <p class="text-sm md:text-base font-bold">Yes, the mint will be paid. However, whitelisted individuals
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Yes, the mint will be paid. However, whitelisted individuals
                     will receive a significant discount on the mint price. The exact pricing details will be announced
                     closer to the mint date. Stay tuned for further updates!</p>
             </div>
 
-            <div class="p-4 md:p-6">
-                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--v2-color-navy)]">Do you plan to launch
+            <div class="p-4 md:p-6 rounded-xl">
+                <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[var(--privy-color-accent-dark)]">Do you plan to launch
                     a token?</h2>
-                <p class="text-sm md:text-base font-bold">Yes! We are planning to launch a token, and we will be doing a
+                <p class="text-sm md:text-base font-bold text-[var(--privy-color-foreground-accent)]">Yes! We are planning to launch a token, and we will be doing a
                     100% airdrop for our holders. This will give holders exclusive access and rewards. More
                     details will be shared closer to the launch!</p>
             </div>
@@ -329,11 +315,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 mt-12 text-[var(--v2-color-navy)]">
+    <footer class="py-8 mt-12 text-[var(--privy-color-success-light)]">
         <div class="container mx-auto text-center">
             <div class="flex justify-center gap-6 mb-6">
                 <!-- X (Twitter) -->
-                <a href="https://x.com/EnellyNFT" class="hover:opacity-70 transition-opacity" target="_blank"
+                <a href="https://x.com/EnellyNFT" class="hover:text-[var(--privy-color-accent-light)] transition-colors" target="_blank"
                     rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -342,14 +328,14 @@
                 </a>
 
                 <!-- Discord -->
-                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
+                <a href="#" class="hover:text-[var(--privy-color-accent-light)] transition-colors" target="_blank" rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                     </svg>
                 </a>
             </div>
-            <p class="text-sm">&copy; 2025 Enelly NFT. All rights reserved.</p>
+            <p class="text-sm opacity-80">&copy; 2025 Enelly NFT. All rights reserved.</p>
         </div>
     </footer>
 </body>

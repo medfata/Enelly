@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[var(--v2-color-cyan)] text-[var(--v2-color-black)]">
+<html lang="en" class="bg-[var(--privy-color-accent-light)] text-[var(--privy-color-foreground-accent)]">
 
 <head>
     <meta charset="UTF-8">
@@ -32,12 +32,17 @@
     </script>
     <style>
         :root {
-            --v2-color-cyan: #61dfff;
-            --v2-color-navy: #190066;
-            --v2-color-indigo: #6119ef;
-            --v2-color-icterine: #fff068;
-            --v2-color-tangerine: #ff8d4c;
-            --v2-color-pink: #fcd6ff;
+            --privy-color-foreground-accent: hsl(0, 0%, 100%);
+            --privy-color-accent: hsl(172, 47%, 36%);
+            --privy-color-accent-light: hsl(172, 47%, 51%);
+            --privy-color-accent-dark: hsl(172, 47%, 30%);
+            --privy-color-success: hsl(147, 43%, 52%);
+            --privy-color-success-dark: hsl(147, 43%, 36%);
+            --privy-color-success-light: hsl(147, 43%, 92%);
+            --privy-color-error: hsl(7, 80%, 62%);
+            --privy-color-error-light: hsl(7, 80%, 92%);
+            --privy-color-warn: hsl(36, 100%, 65%);
+            --privy-color-warn-light: hsl(36, 100%, 95%);
             --v2-color-black: #121212;
             --v2-color-white: #fff;
             --v2-color-smoke: #f8f7f2;
@@ -75,13 +80,8 @@
             transition: all 0.3s ease;
         }
 
-        .nft-input:focus {
-            box-shadow: 0 0 15px rgba(97, 25, 239, 0.3);
-            outline: none;
-        }
-
         .nft-input::placeholder {
-            color: rgba(25, 0, 102, 0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Glowing submit button */
@@ -100,7 +100,7 @@
             height: 200%;
             background: linear-gradient(45deg,
                     transparent,
-                    rgba(97, 25, 239, 0.3),
+                    var(--privy-color-accent-light),
                     transparent);
             transform: rotate(45deg);
             animation: glow 3s linear infinite;
@@ -121,43 +121,43 @@
 <body>
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-        <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
+        <div class="md:w-[85rem] mx-auto bg-[var(--privy-color-success-light)] px-6 py-3 rounded-[20px] shadow-md">
             <nav class="mx-auto flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html"
-                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
                     <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                        class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                        class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
                     <span class="font-semibold tracking-tight text-sm">Enelly</span>
                 </a>
 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center gap-6">
                     <a href="index.html"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Home</a>
                     <a href="#news"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         News</a>
                     <a href="#roadmap"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Roadmap</a>
                     <a href="#bridges"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Bridges</a>
                     <a href="#ourteam"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
                         Team</a>
                     <a href="contact.html"
-                        class="text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
                         aria-current="page">• Contact</a>
                     <a href="faq.html"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         FAQ</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity"
+                <button class="md:hidden text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity"
                     id="mobileMenuButton">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -173,16 +173,16 @@
     <div class="h-24"></div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="fixed inset-0 bg-[var(--v2-color-icterine)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+    <div class="fixed inset-0 bg-[var(--privy-color-success-light)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
         <div class="flex justify-between items-center mb-8">
 
             <a href="index.html"
-            class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+            class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
             <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
             <span class="font-semibold tracking-tight text-sm">Enelly</span>
         </a>
-            <button class="text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+            <button class="text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity" id="closeMenuButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -191,31 +191,31 @@
         </div>
         <div class="flex flex-col gap-6">
             <a href="index.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Home
             </a>
             <a href="#news"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ News
             </a>
             <a href="#roadmap"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Roadmap
             </a>
             <a href="#gridges"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Bridges
             </a>
             <a href="#ourteam"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Our Team
             </a>
             <a href="contact.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity">
                 • Contact
             </a>
             <a href="faq.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
                 aria-current="page">
                 ∘ FAQ
             </a>
@@ -256,18 +256,18 @@
     </script>
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8 max-w-2xl">
-        <h1 class="text-2xl md:text-4xl font-bold text-center text-[var(--v2-color-navy)] mb-8">Connect with Enelly – We’re Here for You!</h1>
+        <h1 class="text-2xl md:text-4xl font-bold text-center text-[var(--privy-color-accent-dark)] mb-8">Connect with Enelly – We're Here for You!</h1>
 
         <!-- Welcome Text -->
         <div class="text-center mb-12 space-y-4 font-bold">
-            <p class="text-sm md:text-base text-[var(--v2-color-navy)] leading-relaxed px-4">
+            <p class="text-sm md:text-base text-white leading-relaxed px-4">
                 At Enelly, our community is everything. Whether you have a question, an idea, or just want to chat, we'd love to hear from you! Reach out via the form below or email us at
                 <a href="mailto:enellylinea@gmail.com"
-                    class="text-[var(--v2-color-indigo)] transition-colors">
+                    class="text-[var(--privy-color-accent-dark)] transition-colors">
                     enellylinea@gmail.com
                 </a>.
             </p>
-            <p class="text-sm text-[var(--v2-color-navy)] leading-relaxed px-4">
+            <p class="text-sm text-white leading-relaxed px-4">
                 We aim to respond within 24-48 hours. Thank you for being a part of our journey—we can't wait to connect!
             </p>
         </div>
@@ -277,30 +277,29 @@
                 <!-- First Name -->
                 <div>
                     <label for="firstName"
-                        class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Name</label>
+                        class="block text-sm font-medium text-white mb-2">Name</label>
                     <input type="text" id="firstName" name="firstName" required
-                        class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                        class="nft-input w-full px-4 py-3 rounded-xl text-white border-2 border-white"
                         placeholder="Enter your first name">
                     <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="firstNameError">Name is required</p>
                 </div>
 
-
                 <!-- Last Name -->
                 <div>
-                    <label for="lastName" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Last
+                    <label for="lastName" class="block text-sm font-medium text-white mb-2">Last
                         Name</label>
                     <input type="text" id="lastName" name="lastName" required
-                        class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                        class="nft-input w-full px-4 py-3 rounded-xl text-white border-2 border-white"
                         placeholder="Enter your last name">
                 </div>
             </div>
 
             <!-- Email -->
             <div>
-                <label for="email" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Email
+                <label for="email" class="block text-sm font-medium text-white mb-2">Email
                     Address</label>
                 <input type="email" id="email" name="email" required
-                    class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] border-2 border-[var(--v2-color-icterine)]"
+                    class="nft-input w-full px-4 py-3 rounded-xl text-white border-2 border-white"
                     placeholder="Enter your email address">
                 <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="emailError">Please enter a valid email
                     address</p>
@@ -308,16 +307,16 @@
 
             <!-- Message -->
             <div>
-                <label for="message" class="block text-sm font-medium text-[var(--v2-color-navy)] mb-2">Message</label>
+                <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
                 <textarea id="message" name="message" rows="6" required
-                    class="nft-input w-full px-4 py-3 rounded-xl text-[var(--v2-color-navy)] resize-none border-2 border-[var(--v2-color-icterine)]"
+                    class="nft-input w-full px-4 py-3 rounded-xl text-white resize-none border-2 border-white"
                     placeholder="Type your message here..."></textarea>
                 <p class="text-rose-500 text-xs mt-1 hidden font-bold" id="messageError">Message is required</p>
             </div>
             <!-- Submit Button -->
             <div class="text-center">
-                <button type="submit" class="submit-glow bg-[var(--v2-color-navy)] text-white px-8 py-3 rounded-3xl font-medium hover:bg-[var(--v2-color-indigo)] transition-colors
-                    border-2 border-[var(--v2-color-icterine)]">
+                <button type="submit" class="submit-glow bg-[var(--privy-color-accent)] text-[var(--privy-color-foreground-accent)] px-8 py-3 rounded-3xl font-medium transition-colors
+                    border-2 border-[var(--privy-color-accent-light)]">
                     Send Message
                 </button>
             </div>
@@ -384,10 +383,10 @@
                             const mainContent = document.querySelector('main');
                             mainContent.innerHTML = `
                                 <div class="text-center py-16 px-4 space-y-6">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-[var(--v2-color-navy)]">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-[var(--privy-color-success-dark)]">
                                         Thank You!
                                     </h2>
-                                    <a href="/" class="inline-block mt-8 text-[var(--v2-color-navy)] hover:text-[var(--v2-color-indigo)] transition-colors">
+                                    <a href="/" class="inline-block mt-8 text-[var(--privy-color-success-dark)] hover:text-[var(--privy-color-accent)] transition-colors">
                                         ← Back to Home
                                     </a>
                                 </div>
@@ -418,11 +417,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 mt-12 text-[var(--v2-color-navy)]">
+    <footer class="py-8 mt-12 text-[var(--privy-color-accent-dark)]">
         <div class="container mx-auto text-center">
             <div class="flex justify-center gap-6 mb-6">
                 <!-- X (Twitter) -->
-                <a href="https://x.com/EnellyNFT" class="hover:opacity-70 transition-opacity" target="_blank"
+                <a href="https://x.com/EnellyNFT" class="hover:text-[var(--privy-color-accent-light)] transition-colors" target="_blank"
                     rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -431,14 +430,14 @@
                 </a>
 
                 <!-- Discord -->
-                <a href="#" class="hover:opacity-70 transition-opacity" target="_blank" rel="noopener noreferrer">
+                <a href="#" class="hover:text-[var(--privy-color-accent-light)] transition-colors" target="_blank" rel="noopener noreferrer">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                     </svg>
                 </a>
             </div>
-            <p class="text-sm">&copy; 2025 Enelly NFT. All rights reserved.</p>
+            <p class="text-sm opacity-80">&copy; 2025 Enelly NFT. All rights reserved.</p>
         </div>
     </footer>
 </body>

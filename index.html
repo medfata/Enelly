@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[var(--v2-color-cyan)] text-[var(--v2-color-black)] relative overflow-x-hidden">
+<html lang="en" class="bg-[var(--privy-color-accent-dark)] text-[var(--v2-color-white)] relative overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -25,12 +25,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --v2-color-cyan: #61dfff;
-            --v2-color-navy: #190066;
-            --v2-color-indigo: #6119ef;
-            --v2-color-icterine: #fff068;
-            --v2-color-tangerine: #ff8d4c;
-            --v2-color-pink: #fcd6ff;
+            --privy-color-accent: hsl(172, 47%, 36%);
+            --privy-color-accent-light: hsl(172, 47%, 51%);
+            --privy-color-accent-dark: hsl(172, 47%, 30%);
+            --privy-color-success: hsl(147, 43%, 52%);
+            --privy-color-success-dark: hsl(147, 43%, 36%);
+            --privy-color-success-light: hsl(147, 43%, 92%);
             --v2-color-black: #121212;
             --v2-color-white: #fff;
             font-family: 'Inter', sans-serif;
@@ -303,43 +303,43 @@
 
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-        <div class="md:w-[85rem] mx-auto bg-[var(--v2-color-icterine)] px-6 py-3 rounded-[20px] shadow-md">
+        <div class="md:w-[85rem] mx-auto bg-[var(--privy-color-success-light)] px-6 py-3 rounded-[20px] shadow-md">
             <nav class="mx-auto flex justify-between items-center">
                 <!-- Logo -->
                 <a href="index.html"
-                    class="text-[var(--v2-color-navy)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
                     <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                        class="w-8 h-8 rounded-full border-2 border-[var(--v2-color-navy)]">
+                        class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
                     <span class="font-semibold tracking-tight text-sm">Enelly</span>
                 </a>
 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center gap-6">
                     <a href="/index.html"
-                        class="text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">•
+                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity">•
                         Home</a>
                     <a href="#news"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         News</a>
                     <a href="#roadmap"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Roadmap</a>
                     <a href="#bridges"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Bridges</a>
                     <a href="#ourteam"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘ Our
                         Team</a>
                     <a href="contact.html"
-                        class="text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
                         aria-current="page">∘ Contact</a>
                     <a href="faq.html"
-                        class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         FAQ</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity"
+                <button class="md:hidden text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity"
                     id="mobileMenuButton">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -353,13 +353,13 @@
 
 
     <!-- Mobile Menu Overlay -->
-    <div class="fixed inset-0 bg-[var(--v2-color-icterine)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+    <div class="fixed inset-0 bg-[var(--privy-color-success-light)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
         <div class="flex justify-between items-center mb-8">
 
-            <a href="/" class="text-[var(--v2-color-navy)] font-bold text-xl">
+            <a href="/" class="text-[var(--privy-color-success-dark)] font-bold text-xl">
                 Enelly
             </a>
-            <button class="text-[var(--v2-color-navy)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+            <button class="text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity" id="closeMenuButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -368,31 +368,31 @@
         </div>
         <div class="flex flex-col gap-6">
             <a href="/index.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-medium hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity">
                 • Home
             </a>
             <a href="#news"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ News
             </a>
             <a href="#roadmap"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Roadmap
             </a>
             <a href="#bridges"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Bridges
             </a>
             <a href="#ourteam"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Our Team
             </a>
             <a href="contact.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Contact
             </a>
             <a href="faq.html"
-                class="flex items-center gap-1 text-[var(--v2-color-navy)] text-sm font-light hover:opacity-70 transition-opacity"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
                 aria-current="page">
                 ∘ FAQ
             </a>
@@ -449,23 +449,23 @@
                         </div>
                         <h1 class="relative text-3xl md:text-5xl lg:text-7xl font-bold tracking-wider">
                             <span
-                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-cyan)] via-white to-[var(--v2-color-icterine)] animate-gradient-x">
+                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--privy-color-accent)] via-white to-[var(--privy-color-success)] animate-gradient-x">
                                 Enelly
                             </span>
                             <span
-                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--v2-color-icterine)] via-white to-[var(--v2-color-cyan)] animate-gradient-x [animation-delay:2s]">
+                                class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[var(--privy-color-success)] via-white to-[var(--privy-color-accent)] animate-gradient-x [animation-delay:2s]">
                                 on Linea
                             </span>
                             <!-- Glowing Effect -->
                             <div
-                                class="absolute -inset-2 bg-gradient-to-r from-[var(--v2-color-cyan)]/20 via-[var(--v2-color-indigo)]/20 to-[var(--v2-color-navy)]/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+                                class="absolute -inset-2 bg-gradient-to-r from-[var(--privy-color-accent)]/20 via-[var(--privy-color-success)]/20 to-[var(--privy-color-success-dark)]/20 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500">
                             </div>
                         </h1>
                     </div>
 
                     <div class="space-y-8">
                         <!-- Secondary Title Section - Simplified -->
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-[var(--v2-color-icterine)]">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-[var(--privy-color-success)]">
                             The Future of Digital Collectibles on Linea Chain
                         </h3>
                         <!-- Description -->
@@ -492,7 +492,7 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-cyan)] via-[var(--v2-color-cyan)]/90 to-[var(--v2-color-cyan)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-accent)] via-[var(--privy-color-accent)]/90 to-[var(--privy-color-accent)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
                                         <div class="absolute inset-0 bg-circuit-pattern opacity-[0.15]"></div>
@@ -525,10 +525,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-indigo)] via-[var(--v2-color-indigo)]/90 to-[var(--v2-color-indigo)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-indigo opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -558,10 +558,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-icterine)] via-[var(--v2-color-icterine)]/90 to-[var(--v2-color-icterine)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success-dark)] via-[var(--privy-color-success-dark)]/90 to-[var(--privy-color-success-dark)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-icterine opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success-dark opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -591,7 +591,7 @@
                                         decoding="async">
                                         <div class="absolute inset-0 -z-10">
                                             <div
-                                                class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-cyan)] via-[var(--v2-color-cyan)]/90 to-[var(--v2-color-cyan)]/70">
+                                                class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-accent)] via-[var(--privy-color-accent)]/90 to-[var(--privy-color-accent)]/70">
                                             </div>
                                             <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
                                             <div class="absolute inset-0 bg-circuit-pattern opacity-[0.15]"></div>
@@ -624,10 +624,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-indigo)] via-[var(--v2-color-indigo)]/90 to-[var(--v2-color-indigo)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-indigo opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -657,10 +657,10 @@
                                         decoding="async">
                                         <div class="absolute inset-0 -z-10">
                                             <div
-                                                class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-icterine)] via-[var(--v2-color-icterine)]/90 to-[var(--v2-color-icterine)]/70">
+                                                class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success-dark)] via-[var(--privy-color-success-dark)]/90 to-[var(--privy-color-success-dark)]/70">
                                             </div>
                                             <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                            <div class="absolute inset-0 bg-circuit-pattern-icterine opacity-[0.15]"></div>
+                                            <div class="absolute inset-0 bg-circuit-pattern-success-dark opacity-[0.15]"></div>
                                             <div
                                                 class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                             </div>
@@ -690,10 +690,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-indigo)] via-[var(--v2-color-indigo)]/90 to-[var(--v2-color-indigo)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-indigo opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -725,10 +725,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-tangerine)] via-[var(--v2-color-tangerine)]/90 to-[var(--v2-color-tangerine)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-tangerine opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -758,10 +758,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-indigo)] via-[var(--v2-color-indigo)]/90 to-[var(--v2-color-indigo)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-indigo opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -791,7 +791,7 @@
                                         decoding="async">
                                         <div class="absolute inset-0 -z-10">
                                             <div
-                                                class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-cyan)] via-[var(--v2-color-cyan)]/90 to-[var(--v2-color-cyan)]/70">
+                                                class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-accent)] via-[var(--privy-color-accent)]/90 to-[var(--privy-color-accent)]/70">
                                             </div>
                                             <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
                                             <div class="absolute inset-0 bg-circuit-pattern opacity-[0.15]"></div>
@@ -824,10 +824,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-icterine)] via-[var(--v2-color-icterine)]/90 to-[var(--v2-color-icterine)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success-dark)] via-[var(--privy-color-success-dark)]/90 to-[var(--privy-color-success-dark)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-icterine opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success-dark opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -857,10 +857,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-tangerine)] via-[var(--v2-color-tangerine)]/90 to-[var(--v2-color-tangerine)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success)] via-[var(--privy-color-success)]/90 to-[var(--privy-color-success)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-tangerine opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -890,10 +890,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-cyan)] via-[var(--v2-color-cyan)]/90 to-[var(--v2-color-cyan)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-accent)] via-[var(--privy-color-accent)]/90 to-[var(--privy-color-accent)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-cyan opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
@@ -923,10 +923,10 @@
                                         decoding="async">
                                     <div class="absolute inset-0 -z-10">
                                         <div
-                                            class="absolute inset-0 bg-gradient-to-br from-[var(--v2-color-icterine)] via-[var(--v2-color-icterine)]/90 to-[var(--v2-color-icterine)]/70">
+                                            class="absolute inset-0 bg-gradient-to-br from-[var(--privy-color-success-dark)] via-[var(--privy-color-success-dark)]/90 to-[var(--privy-color-success-dark)]/70">
                                         </div>
                                         <div class="absolute inset-0 bg-radial-gradient opacity-50"></div>
-                                        <div class="absolute inset-0 bg-circuit-pattern-icterine opacity-[0.15]"></div>
+                                        <div class="absolute inset-0 bg-circuit-pattern-success-dark opacity-[0.15]"></div>
                                         <div
                                             class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-12">
                                         </div>
