@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[var(--privy-color-accent-light)] text-[var(--privy-color-foreground-accent)]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/enelly_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/enelly_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/enelly_logo.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <meta name="theme-color" content="#61dfff">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Enelly NFT - Whitelist Checker">
+    <meta property="og:description" content="Check your whitelist status for Enelly NFT">
+    <meta property="og:image" content="./assets/enelly_logo.png">
+    <meta property="og:url" content="https://enellynft.xyz/checker.html">
+
+    <title>Enelly - Whitelist Checker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        :root {
+            --privy-color-foreground-accent: hsl(0, 0%, 100%);
+            --privy-color-accent: hsl(172, 47%, 36%);
+            --privy-color-accent-light: hsl(172, 47%, 51%);
+            --privy-color-accent-dark: hsl(172, 47%, 30%);
+            --privy-color-success: hsl(147, 43%, 52%);
+            --privy-color-success-dark: hsl(147, 43%, 36%);
+            --privy-color-success-light: hsl(147, 43%, 92%);
+            --privy-color-error: hsl(7, 80%, 62%);
+            --privy-color-error-light: hsl(7, 80%, 92%);
+            --privy-color-warn: hsl(36, 100%, 65%);
+            --privy-color-warn-light: hsl(36, 100%, 95%);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mobile-menu-enter {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        .mobile-menu-enter-active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu-exit {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+        }
+
+        .mobile-menu-exit-active {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        /* Futuristic input styles */
+        .nft-input {
+            background: rgba(243, 244, 246, 0.5);
+            transition: all 0.3s ease;
+            color: #111827;
+        }
+
+        .nft-input:focus {
+            box-shadow: 0 0 0 2px var(--privy-color-accent-light);
+            outline: none;
+            border-color: var(--privy-color-accent-light);
+            background: white;
+        }
+
+        .nft-input::placeholder {
+            color: #6B7280;
+        }
+
+        /* Enhanced button styles */
+        .check-button {
+            background: linear-gradient(135deg, var(--privy-color-accent) 0%, var(--privy-color-accent-light) 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .check-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .check-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .check-button:hover::before {
+            left: 100%;
+        }
+
+        /* Logo animation */
+        .logo-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
+        /* Card styles */
+        .checker-card {
+            background: white;
+            border: 1px solid rgba(229, 231, 235, 1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+        <div class="md:w-[85rem] mx-auto bg-[var(--privy-color-success-light)] px-6 py-3 rounded-[20px] shadow-md">
+            <nav class="mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html"
+                    class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                    <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                        class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
+                    <span class="font-semibold tracking-tight text-sm">Enelly</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Home</a>
+                    <a href="#news"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        News</a>
+                    <a href="#roadmap"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="#bridges"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Bridges</a>
+                    <a href="checker.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                        aria-current="page">• Checker</a>
+                    <a href="contact.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Contact</a>
+                    <a href="faq.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        FAQ</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity"
+                    id="mobileMenuButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-16 6h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Add a spacer to prevent content from going under the fixed header -->
+    <div class="h-24"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-[var(--privy-color-success-light)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
+        <div class="flex justify-between items-center mb-8">
+
+            <a href="index.html"
+            class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+            <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
+            <span class="font-semibold tracking-tight text-sm">Enelly</span>
+        </a>
+            <button class="text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity" id="closeMenuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6">
+            <a href="index.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Home
+            </a>
+            <a href="#news"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ News
+            </a>
+            <a href="#roadmap"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Roadmap
+            </a>
+            <a href="#gridges"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Bridges
+            </a>
+            <a href="checker.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                aria-current="page">
+                • Checker
+            </a>
+            <a href="contact.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Contact
+            </a>
+            <a href="faq.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
+                aria-current="page">
+                ∘ FAQ
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-2xl">
+        <div class="checker-card">
+            <div class="text-center space-y-4">
+                <div class="logo-shine inline-block rounded-full p-1 bg-gradient-to-r from-[var(--privy-color-accent-light)] to-[var(--privy-color-accent)]">
+                    <img src="./assets/enelly_logo.png" alt="Enelly Logo" 
+                         class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full border-4 border-white">
+                </div>
+                <div class="space-y-2">
+                    <h1 class="text-lg md:text-xl font-bold text-gray-900">Verify Your Whitelist Status</h1>
+                    <p class="text-gray-500 text-sm md:text-md  max-w-md mx-auto">
+                        Check if your wallet is ready for the exclusive Enelly experience
+                    </p>
+                </div>
+                <div class="rounded-xl p-2 max-w-md mx-auto">
+                    <p class="text-[var(--privy-color-accent-dark)] font-medium text-sm">
+                        Discover your eligibility for exclusive drops and special rewards by following these simple steps
+                    </p>
+                </div>
+            </div>
+
+            <form class="mt-10 space-y-8" id="checkerForm">
+                <div class="max-w-md mx-auto w-full">
+                    <div class="relative">
+                        <input type="text" id="walletAddress" required
+                            class="nft-input w-full px-4 py-4 rounded-xl border-2 border-[var(--privy-color-accent-light)] text-gray-900 text-sm md:text-md"
+                            placeholder="Enter your EVM wallet address">
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                            <svg class="w-6 h-6 text-[var(--privy-color-accent-light)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />  
+                            </svg>
+                        </div>
+                        <p id="errorMessage" class="text-[var(--privy-color-error)] text-sm mt-2 hidden">Please enter a wallet address</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="check-button text-white px-12 py-4 rounded-xl font-semibold text-sm md:text-md shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
+                        Check Status
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 mt-12 text-[var(--privy-color-accent-dark)]">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/EnellyNFT" class="hover:text-[var(--privy-color-accent-light)] transition-colors"
+                    target="_blank" rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+
+                <!-- Discord -->
+                <a href="#" class="hover:text-[var(--privy-color-accent-light)] transition-colors" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm opacity-80">&copy; 2025 Enelly NFT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Base64 encoded whitelist array
+        const encodedAddresses = [
+            'MHgzQzQyOUNDYTZFRDJhYUUyODg3QkZFYmM1MWZBRTYwQjc2QURhZDk2',
+            'MHgxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4',
+            'MHhhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OWFiY2RlZjAx'
+        ];
+
+        // Function to decode and check address
+        function isWhitelisted(address) {
+            const normalizedAddress = address.toLowerCase();
+            return encodedAddresses.some(encoded => {
+                try {
+                    const decoded = atob(encoded).toLowerCase();
+                    return decoded === normalizedAddress;
+                } catch {
+                    return false;
+                }
+            });
+        }
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.remove('mobile-menu-enter');
+                    mobileMenu.classList.add('mobile-menu-enter-active');
+                });
+            });
+        }
+
+        if (closeMenuButton && mobileMenu) {
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('mobile-menu-enter-active');
+                mobileMenu.classList.add('mobile-menu-exit');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('mobile-menu-exit-active');
+                });
+
+                setTimeout(() => {
+                    mobileMenu.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    mobileMenu.classList.remove('mobile-menu-exit', 'mobile-menu-exit-active');
+                    mobileMenu.classList.add('mobile-menu-enter');
+                }, 300);
+            });
+        }
+
+        // Form submission handler
+        document.getElementById('checkerForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const walletInput = document.getElementById('walletAddress');
+            const errorMessage = document.getElementById('errorMessage');
+            const walletAddress = walletInput.value.trim();
+
+            // Reset styles
+            walletInput.style.borderColor = '';
+            errorMessage.classList.add('hidden');
+
+            if (!walletAddress) {
+                walletInput.style.borderColor = 'var(--privy-color-error)';
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Add wallet address validation
+            if (!/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Address',
+                    text: 'Please enter a valid EVM wallet address',
+                    confirmButtonText: 'Try Again',
+                    confirmButtonColor: 'var(--privy-color-error)',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                walletInput.style.borderColor = 'var(--privy-color-error)';
+                return;
+            }
+
+            // Show loading state with SweetAlert2
+            const loadingAlert = Swal.fire({
+                title: 'Checking Whitelist Status',
+                html: 'Please wait while we verify your wallet...',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            try {
+                // Simulate API delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Check if address is in whitelist
+                const whitelistStatus = isWhitelisted(walletAddress);
+                
+                // Close loading alert
+                await loadingAlert.close();
+                
+                if (whitelistStatus) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Congratulations! 🎉',
+                        html: `
+                            <div class="space-y-4">
+                                <p>Your wallet is whitelisted!</p>
+                                <p class="text-sm text-gray-600">You are eligible for the exclusive Enelly experience.</p>
+                            </div>
+                        `,
+                        confirmButtonText: 'Awesome!',
+                        confirmButtonColor: 'var(--privy-color-success)',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: true,
+                        allowOutsideClick: false
+                    });
+                    walletInput.style.borderColor = 'var(--privy-color-success)';
+                } else {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Not Whitelisted',
+                        html: `
+                            <div class="space-y-4">
+                                <p>Your wallet is not on the whitelist yet.</p>
+                                <p class="text-sm text-gray-600">Join our Discord for whitelist opportunities!</p>
+                                <a href="#" class="inline-block mt-2 text-[var(--privy-color-accent)] hover:underline">
+                                    Join Discord Community →
+                                </a>
+                            </div>
+                        `,
+                        showCancelButton: true,
+                        confirmButtonText: 'Try Again',
+                        cancelButtonText: 'Close',
+                        confirmButtonColor: 'var(--privy-color-accent)',
+                        cancelButtonColor: 'var(--privy-color-warn)',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    });
+                    walletInput.style.borderColor = 'var(--privy-color-warn)';
+                }
+            } catch (error) {
+                await loadingAlert.close();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Failed to check whitelist status. Please try again.',
+                    confirmButtonText: 'Try Again',
+                    confirmButtonColor: 'var(--privy-color-error)',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+            }
+        });
+
+        // Input validation on change
+        document.getElementById('walletAddress').addEventListener('input', function(e) {
+            const errorMessage = document.getElementById('errorMessage');
+            if (e.target.value.trim()) {
+                e.target.style.borderColor = '';
+                errorMessage.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html> 
