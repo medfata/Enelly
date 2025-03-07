@@ -13,18 +13,16 @@
     <meta name="theme-color" content="#61dfff">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Enelly NFT - Whitelist Checker">
-    <meta property="og:description" content="Check your whitelist status for Enelly NFT">
+    <meta property="og:title" content="Enelly NFT - VIP Pass">
+    <meta property="og:description" content="Exclusive VIP benefits for Enelly NFT holders">
     <meta property="og:image" content="./assets/enelly_logo.png">
-    <meta property="og:url" content="https://enellynft.xyz/checker.html">
+    <meta property="og:url" content="https://enellynft.xyz/vippass.html">
 
-    <title>Enelly - Whitelist Checker</title>
+    <title>Enelly - VIP Pass</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         :root {
             --privy-color-foreground-accent: hsl(0, 0%, 100%);
@@ -124,7 +122,6 @@
             background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
         }
 
-        /* Add new floating elements */
         .floating-element:nth-child(4) {
             width: 150px;
             height: 150px;
@@ -182,8 +179,8 @@
             z-index: 1;
         }
 
-        /* Update checker card styles */
-        .checker-card {
+        /* VIP Pass card styles */
+        .vip-card {
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 24px;
@@ -215,68 +212,43 @@
             opacity: 0;
         }
 
-        /* Futuristic input styles */
-        .nft-input {
-            background: rgba(243, 244, 246, 0.5);
-            transition: all 0.3s ease;
-            color: #111827;
+        /* Add glass morphism effect to header */
+        header .md\:w-\[85rem\] {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .nft-input:focus {
-            box-shadow: 
-                0 0 0 2px var(--privy-color-accent-light),
-                0 0 20px rgba(97, 223, 255, 0.2);
-            outline: none;
-            border-color: var(--privy-color-accent-light);
-            background: white;
+        /* VIP Benefits list styles */
+        .vip-benefits li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
         }
 
-        .nft-input::placeholder {
-            color: #6B7280;
+        .vip-benefits li::before {
+            content: '✅';
         }
 
-        /* Enhanced button styles */
-        .check-button {
-            background: linear-gradient(135deg, var(--privy-color-accent) 0%, var(--privy-color-accent-light) 100%);
-            transition: all 0.3s ease;
+        /* Futuristic Button Styles */
+        .futuristic-btn {
             position: relative;
+            background: linear-gradient(45deg, var(--privy-color-accent), var(--privy-color-accent-dark));
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
             overflow: hidden;
-        }
-
-        .check-button:hover {
-            transform: translateY(-1px);
+            transition: all 0.3s ease;
             box-shadow: 
-                0 4px 12px rgba(0, 0, 0, 0.1),
-                0 0 20px rgba(97, 223, 255, 0.3);
+                0 0 15px rgba(97, 223, 255, 0.3),
+                0 0 30px rgba(97, 223, 255, 0.2),
+                inset 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        .check-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent
-            );
-            transition: 0.5s;
-        }
-
-        .check-button:hover::before {
-            left: 100%;
-        }
-
-        /* Logo animation */
-        .logo-shine {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-shine::after {
+        .futuristic-btn::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -286,11 +258,38 @@
             background: linear-gradient(
                 45deg,
                 transparent,
-                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.1),
                 transparent
             );
             transform: rotate(45deg);
             animation: shine 3s infinite;
+        }
+
+        .futuristic-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .futuristic-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 20px rgba(97, 223, 255, 0.4),
+                0 0 40px rgba(97, 223, 255, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .futuristic-btn:hover::after {
+            opacity: 1;
         }
 
         @keyframes shine {
@@ -300,12 +299,6 @@
             100% {
                 transform: translateX(100%) rotate(45deg);
             }
-        }
-
-        /* Add glass morphism effect to header */
-        header .md\:w-\[85rem\] {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -340,11 +333,11 @@
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Roadmap</a>
                     <a href="vippass.html"
-                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
-                        VIP Pass</a>
-                    <a href="checker.html"
                         class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
-                        aria-current="page">• Checker</a>
+                        aria-current="page">• VIP Pass</a>
+                    <a href="checker.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Checker</a>
                     <a href="contact.html"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Contact</a>
@@ -372,13 +365,12 @@
     <!-- Mobile Menu Overlay -->
     <div class="fixed inset-0 bg-[var(--privy-color-success-light)] z-50 hidden flex-col p-6 mobile-menu-enter" id="mobileMenu">
         <div class="flex justify-between items-center mb-8">
-
             <a href="index.html"
-            class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
-            <img src="./assets/enelly_logo.png" alt="Enelly Logo"
-                class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
-            <span class="font-semibold tracking-tight text-sm">Enelly</span>
-        </a>
+                class="text-[var(--privy-color-success-dark)] font-bold text-xl hover:opacity-70 transition-opacity flex items-center gap-2">
+                <img src="./assets/enelly_logo.png" alt="Enelly Logo"
+                    class="w-8 h-8 rounded-full border-2 border-[var(--privy-color-success-dark)]">
+                <span class="font-semibold tracking-tight text-sm">Enelly</span>
+            </a>
             <button class="text-[var(--privy-color-success-dark)] hover:opacity-70 transition-opacity" id="closeMenuButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -400,70 +392,74 @@
                 ∘ Roadmap
             </a>
             <a href="vippass.html"
-                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
-                ∘ VIP Pass
-            </a>
-            <a href="checker.html"
                 class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
                 aria-current="page">
-                • Checker
+                • VIP Pass
+            </a>
+            <a href="checker.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Checker
             </a>
             <a href="contact.html"
                 class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ Contact
             </a>
             <a href="faq.html"
-                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
-                aria-current="page">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ FAQ
             </a>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 max-w-2xl">
-        <div class="checker-card">
-            <div class="text-center space-y-4">
-                <div class="logo-shine inline-block rounded-full p-1 bg-gradient-to-r from-[var(--privy-color-accent-light)] to-[var(--privy-color-accent)]">
-                    <img src="./assets/enelly_logo.png" alt="Enelly Logo" 
-                         class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full border-4 border-white">
+    <main class="container mx-auto px-4 py-8">
+        <div class="vip-card">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Left side - GIF -->
+                <div class="w-full md:w-1/2">
+                    <img src="./assets/vip_pass.gif" alt="VIP Pass Animation" class="w-full rounded-xl shadow-lg">
                 </div>
-                <div class="space-y-2">
-                    <h1 class="text-lg md:text-xl font-bold text-gray-900">Verify Your Whitelist Status</h1>
-                    <p class="text-gray-500 text-sm md:text-md  max-w-md mx-auto">
-                        Check if your wallet is ready for the exclusive Enelly experience
+                
+                <!-- Right side - Content -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-[var(--privy-color-accent-dark)]">
+                        Enelly VIP Pass 🏆🐐
+                    </h1>
+                    
+                    <p class="text-sm md:text-base text-gray-700">
+                        Welcome to the exclusive Enelly VIP experience!
+                        Holding an Enelly NFT isn't just about owning—it's about unlocking real value. 🚀
                     </p>
-                </div>
-                <div class="rounded-xl p-2 max-w-md mx-auto">
-                    <p class="text-[var(--privy-color-accent-dark)] font-medium text-sm">
-                        Discover your eligibility for exclusive drops and special rewards
-                    </p>
-                </div>
-            </div>
 
-            <form class="mt-10 space-y-8" id="checkerForm">
-                <div class="max-w-md mx-auto w-full">
-                    <div class="relative">
-                        <input type="text" id="walletAddress" required
-                            class="nft-input w-full px-4 py-4 rounded-xl border-2 border-[var(--privy-color-accent-light)] text-gray-900 text-sm md:text-md"
-                            placeholder="Enter your EVM wallet address">
-                        <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                            <svg class="w-6 h-6 text-[var(--privy-color-accent-light)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />  
-                            </svg>
-                        </div>
-                        <p id="errorMessage" class="text-[var(--privy-color-error)] text-sm mt-2 hidden">Please enter a wallet address</p>
+                    <div class="space-y-4">
+                        <h2 class="text-lg md:text-xl font-semibold text-[var(--privy-color-accent-dark)]">🔥 VIP Benefits:</h2>
+                        <ul class="vip-benefits text-sm md:text-base text-gray-700 space-y-3">
+                            <li>Earn XP Daily – Get 10 XP per day just for holding! 🎯</li>
+                            <li>Guaranteed Free Mint Airdrop – NFTs dropped straight to your wallet! 🎁</li>
+                            <li>15% of Enelly Token Airdrop – Holders secure a major share of our first airdrop! 💰</li>
+                            <li>Premium Platform Access – Get in 5 days before launch and experience it first! 🚀</li>
+                            <li>Exclusive Airdrops – Special token & NFT rewards for VIPs.</li>
+                            <li>Private Access – VIP-only chats, alpha calls & insights.</li>
+                            <li>Raffles & Giveaways – Win rare NFTs, tokens & whitelist spots.</li>
+                            <li>Priority Minting – Early access to future drops.</li>
+                            <li>Hyperliquid Perks – Exclusive advantages within the ecosystem.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 p-4">
+                        <p class="text-sm md:text-base text-[var(--privy-color-accent-dark)] font-semibold">
+                            💎 Only Enelly NFT holders can access these benefits!
+                        </p>
+                    </div>
+
+                    <!-- Connect Wallet Button -->
+                    <div class="mt-8 flex justify-center">
+                        <button class="futuristic-btn text-sm md:text-base">
+                            Connect Wallet
+                        </button>
                     </div>
                 </div>
-
-                <div class="text-center">
-                    <button type="submit"
-                        class="check-button text-white px-12 py-4 rounded-xl font-semibold text-sm md:text-md shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
-                        Check Status
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </main>
 
@@ -494,26 +490,6 @@
     </footer>
 
     <script>
-        // Base64 encoded whitelist array
-        const encodedAddresses = [
-            'MHgzQzQyOUNDYTZFRDJhYUUyODg3QkZFYmM1MWZBRTYwQjc2QURhZDk2',
-            'MHgxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4',
-            'MHhhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OWFiY2RlZjAx'
-        ];
-
-        // Function to decode and check address
-        function isWhitelisted(address) {
-            const normalizedAddress = address.toLowerCase();
-            return encodedAddresses.some(encoded => {
-                try {
-                    const decoded = atob(encoded).toLowerCase();
-                    return decoded === normalizedAddress;
-                } catch {
-                    return false;
-                }
-            });
-        }
-
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const closeMenuButton = document.getElementById('closeMenuButton');
@@ -546,139 +522,6 @@
                 }, 300);
             });
         }
-
-        // Form submission handler
-        document.getElementById('checkerForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const walletInput = document.getElementById('walletAddress');
-            const errorMessage = document.getElementById('errorMessage');
-            const walletAddress = walletInput.value.trim();
-
-            // Reset styles
-            walletInput.style.borderColor = '';
-            errorMessage.classList.add('hidden');
-
-            if (!walletAddress) {
-                walletInput.style.borderColor = 'var(--privy-color-error)';
-                errorMessage.classList.remove('hidden');
-                return;
-            }
-
-            // Add wallet address validation
-            if (!/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Invalid Address',
-                    text: 'Please enter a valid EVM wallet address',
-                    confirmButtonText: 'Try Again',
-                    confirmButtonColor: 'var(--privy-color-error)',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-                walletInput.style.borderColor = 'var(--privy-color-error)';
-                return;
-            }
-
-            // Show loading state with SweetAlert2
-            const loadingAlert = Swal.fire({
-                title: 'Checking Whitelist Status',
-                html: 'Please wait while we verify your wallet...',
-                allowOutsideClick: false,
-                showConfirmButton: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-
-            try {
-                // Simulate API delay
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                // Check if address is in whitelist
-                const whitelistStatus = isWhitelisted(walletAddress);
-                
-                // Close loading alert
-                await loadingAlert.close();
-                
-                if (whitelistStatus) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Congratulations! 🎉',
-                        html: `
-                            <div class="space-y-4">
-                                <p>Your wallet is whitelisted!</p>
-                                <p class="text-sm text-gray-600">You are eligible for the exclusive Enelly experience.</p>
-                            </div>
-                        `,
-                        confirmButtonText: 'Awesome!',
-                        confirmButtonColor: 'var(--privy-color-success)',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown'
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        },
-                        showConfirmButton: true,
-                        allowOutsideClick: false
-                    });
-                    walletInput.style.borderColor = 'var(--privy-color-success)';
-                } else {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Not Whitelisted',
-                        html: `
-                            <div class="space-y-4">
-                                <p>Your wallet is not on the whitelist yet.</p>
-                                <p class="text-sm text-gray-600">Join our Discord for whitelist opportunities!</p>
-                                <a href="#" class="inline-block mt-2 text-[var(--privy-color-accent)] hover:underline">
-                                    Join Discord Community →
-                                </a>
-                            </div>
-                        `,
-                        showCancelButton: true,
-                        confirmButtonText: 'Try Again',
-                        cancelButtonText: 'Close',
-                        confirmButtonColor: 'var(--privy-color-accent)',
-                        cancelButtonColor: 'var(--privy-color-warn)',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown'
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        }
-                    });
-                    walletInput.style.borderColor = 'var(--privy-color-warn)';
-                }
-            } catch (error) {
-                await loadingAlert.close();
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Failed to check whitelist status. Please try again.',
-                    confirmButtonText: 'Try Again',
-                    confirmButtonColor: 'var(--privy-color-error)',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-            }
-        });
-
-        // Input validation on change
-        document.getElementById('walletAddress').addEventListener('input', function(e) {
-            const errorMessage = document.getElementById('errorMessage');
-            if (e.target.value.trim()) {
-                e.target.style.borderColor = '';
-                errorMessage.classList.add('hidden');
-            }
-        });
     </script>
 </body>
 
