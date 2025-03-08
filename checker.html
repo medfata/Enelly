@@ -307,6 +307,37 @@
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
+        /* Glowing button animation */
+        .submit-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .submit-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                    transparent,
+                    var(--privy-color-accent-light),
+                    transparent);
+            transform: rotate(45deg);
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
     </style>
 </head>
 
@@ -351,6 +382,12 @@
                     <a href="faq.html"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         FAQ</a>
+                    <a href="roadmap.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="rewards.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Rewards</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -413,9 +450,16 @@
                 ∘ Contact
             </a>
             <a href="faq.html"
-                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity"
-                aria-current="page">
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ FAQ
+            </a>
+            <a href="roadmap.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Roadmap
+            </a>
+            <a href="rewards.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Rewards
             </a>
         </div>
     </div>
@@ -459,7 +503,7 @@
 
                 <div class="text-center">
                     <button type="submit"
-                        class="check-button text-white px-12 py-4 rounded-xl font-semibold text-sm md:text-md shadow-lg transform transition-all duration-300 hover:scale-[1.02]">
+                        class="check-button text-white px-12 py-4 rounded-xl font-semibold text-sm md:text-md shadow-lg transform transition-all duration-300 hover:scale-[1.02] submit-glow">
                         Check Status
                     </button>
                 </div>

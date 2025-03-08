@@ -226,10 +226,6 @@
             gap: 0.5rem;
         }
 
-        .vip-benefits li::before {
-            content: '✅';
-        }
-
         /* Futuristic Button Styles */
         .futuristic-btn {
             position: relative;
@@ -344,6 +340,12 @@
                     <a href="faq.html"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         FAQ</a>
+                    <a href="roadmap.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="rewards.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Rewards</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -408,12 +410,23 @@
                 class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
                 ∘ FAQ
             </a>
+            <a href="roadmap.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Roadmap
+            </a>
+            <a href="rewards.html"
+                class="flex items-center gap-1 text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">
+                ∘ Rewards
+            </a>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
         <div class="vip-card">
+            <h1 class="text-2xl md:text-3xl font-bold text-[var(--privy-color-accent-dark)] text-center mb-8">
+                Enelly VIP Pass
+            </h1>
             <div class="flex flex-col md:flex-row gap-8 items-center">
                 <!-- Left side - GIF -->
                 <div class="w-full md:w-1/2">
@@ -421,44 +434,39 @@
                 </div>
                 
                 <!-- Right side - Content -->
-                <div class="w-full md:w-1/2 space-y-6">
-                    <h1 class="text-2xl md:text-3xl font-bold text-[var(--privy-color-accent-dark)]">
-                        Enelly VIP Pass 🏆🐐
-                    </h1>
-                    
-                    <p class="text-sm md:text-base text-gray-700">
+                <div class="w-full md:w-1/2 space-y-6">  
+                    <p class="text-sm md:text-base text-gray-700 text-center">
                         Welcome to the exclusive Enelly VIP experience!
-                        Holding an Enelly NFT isn't just about owning—it's about unlocking real value. 🚀
+                        Holding an Enelly NFT isn't just about owning—it's about unlocking real value.
                     </p>
 
                     <div class="space-y-4">
-                        <h2 class="text-lg md:text-xl font-semibold text-[var(--privy-color-accent-dark)]">🔥 VIP Benefits:</h2>
-                        <ul class="vip-benefits text-sm md:text-base text-gray-700 space-y-3">
-                            <li>Earn XP Daily – Get 10 XP per day just for holding! 🎯</li>
-                            <li>Guaranteed Free Mint Airdrop – NFTs dropped straight to your wallet! 🎁</li>
-                            <li>15% of Enelly Token Airdrop – Holders secure a major share of our first airdrop! 💰</li>
-                            <li>Premium Platform Access – Get in 5 days before launch and experience it first! 🚀</li>
-                            <li>Exclusive Airdrops – Special token & NFT rewards for VIPs.</li>
-                            <li>Private Access – VIP-only chats, alpha calls & insights.</li>
-                            <li>Raffles & Giveaways – Win rare NFTs, tokens & whitelist spots.</li>
-                            <li>Priority Minting – Early access to future drops.</li>
-                            <li>Hyperliquid Perks – Exclusive advantages within the ecosystem.</li>
-                        </ul>
+                        <h2 class="text-lg md:text-xl font-semibold text-[var(--privy-color-accent-dark)] text-center">VIP Benefits:</h2>
+                        <div class="space-y-3">
+                            <p class="text-sm md:text-base text-gray-700 text-center">Earn XP Daily – Get 10 XP per day just for holding!</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Guaranteed Free Mint Airdrop – NFTs dropped straight to your wallet!</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">15% of Enelly Token Airdrop – Holders secure a major share of our first airdrop!</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Premium Platform Access – Get in 5 days before launch and experience it first!</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Exclusive Airdrops – Special token & NFT rewards for VIPs</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Private Access – VIP-only chats, alpha calls & insights</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Raffles & Giveaways – Win rare NFTs, tokens & whitelist spots</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Priority Minting – Early access to future drops</p>
+                            <p class="text-sm md:text-base text-gray-700 text-center">Hyperliquid Perks – Exclusive advantages within the ecosystem</p>
+                        </div>
                     </div>
 
                     <div class="mt-8 p-4">
-                        <p class="text-sm md:text-base text-[var(--privy-color-accent-dark)] font-semibold">
-                            💎 Only Enelly NFT holders can access these benefits!
+                        <p class="text-sm md:text-base text-[var(--privy-color-accent-dark)] font-semibold text-center">
+                            Only Enelly NFT holders can access these benefits!
                         </p>
                     </div>
 
                     <!-- Connect Wallet Button -->
-                    <div class="mt-8 flex flex-col items-center gap-2">
-                        <button class="futuristic-btn text-sm md:text-base">
+                    <!-- <div class="mt-8 flex flex-col items-center gap-2">
+                        <button id="connectWalletBtn" class="futuristic-btn text-sm md:text-base">
                             Connect Wallet
                         </button>
-                        <span class="text-xs text-gray-500 italic">Coming Soon</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -523,6 +531,21 @@
                 }, 300);
             });
         }
+
+        // Connect Wallet button functionality
+        // const connectWalletBtn = document.getElementById('connectWalletBtn');
+        // let timeoutId;
+
+        // if (connectWalletBtn) {
+        //     connectWalletBtn.addEventListener('click', () => {
+        //         connectWalletBtn.innerText = 'Coming Soon';
+        //         // Hide the message after 2 seconds
+        //         clearTimeout(timeoutId);
+        //         timeoutId = setTimeout(() => {
+        //             connectWalletBtn.innerText = 'Connect Wallet';
+        //         }, 2000);
+        //     });
+        // }
     </script>
 </body>
 

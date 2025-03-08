@@ -152,6 +152,48 @@
             }
         }
 
+        /* Glowing button animation */
+        .submit-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--privy-color-accent) 0%, var(--privy-color-accent-light) 100%);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .submit-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(97, 223, 255, 0.3);
+        }
+
+        .submit-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                    transparent,
+                    var(--privy-color-accent-light),
+                    transparent);
+            transform: rotate(45deg);
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
         .mobile-menu-enter {
             transform: translateY(100%);
             opacity: 0;
@@ -260,6 +302,12 @@
                     <a href="faq.html"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         FAQ</a>
+                    <a href="roadmap.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Roadmap</a>
+                    <a href="rewards.html"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Rewards</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -318,6 +366,12 @@
             <a href="faq.html"
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 FAQ</a>
+            <a href="roadmap.html"
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Roadmap</a>
+            <a href="rewards.html"
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Rewards</a>
         </div>
     </div>
 
@@ -331,7 +385,7 @@
                         <div class="flex-shrink-0">
                             <img src="./assets/enelly_logo.png" alt="Enelly NFT" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900">Stake NFT</h2>
+                        <h2 class="text-2xl font-bold text-gray-900">Stake Enelly NFT</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                         <div class="bg-white p-4 rounded-xl shadow-sm">
@@ -356,12 +410,19 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="stake-button text-white px-8 py-3 rounded-xl font-semibold">
+                        <button class="submit-glow text-white px-8 py-3 rounded-xl font-semibold connectWalletBtn">
                             Connect Wallet
                         </button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Info Message -->
+        <div class="text-center mb-8">
+            <p class="text-white text-sm md:text-base font-medium max-w-2xl mx-auto">
+                Staking will open for VIP Pass and EnellyNFT holders once the mint is completed. Get ready for what's coming next!
+            </p>
         </div>
 
         <!-- Stake VIP Pass Section -->
@@ -370,7 +431,7 @@
                 <div class="flex-1">
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
                         <div class="flex-shrink-0">
-                            <img src="./assets/enelly_logo.png" alt="Enelly NFT" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
+                            <img src="./assets/vip_pass_logo.png" alt="Enelly NFT" class="w-16 h-16 rounded-full border-4 border-white shadow-lg">
                         </div>
                         <h2 class="text-2xl font-bold text-gray-900">Stake VIP Pass</h2>
                     </div>
@@ -397,7 +458,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center">
-                        <button class="stake-button text-white px-8 py-3 rounded-xl font-semibold">
+                        <button class="submit-glow text-white px-8 py-3 rounded-xl font-semibold connectWalletBtn">
                             Connect Wallet
                         </button>
                     </div>
@@ -463,6 +524,21 @@
                     mobileMenu.classList.remove('mobile-menu-exit', 'mobile-menu-exit-active');
                     mobileMenu.classList.add('mobile-menu-enter');
                 }, 300);
+            });
+        }
+        const buttons = document.querySelectorAll('.connectWalletBtn');
+        let timeoutId;
+
+        if (buttons) {
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.innerText = 'Coming Soon';
+                    // Hide the message after 2 seconds
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        btn.innerText = 'Connect Wallet';
+                    }, 2000);
+                });
             });
         }
     </script>
