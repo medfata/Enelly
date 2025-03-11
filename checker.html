@@ -559,10 +559,19 @@
 
             // Split by new lines and remove the header
             const lines = csvText.split('\n').map(line => line.trim()).filter(line => line);
-            cachedWalletsV2 = new Set(lines.slice(1)); // Remove header and store as Set
+
+            // Parse CSV and extract owner addresses
+            cachedWalletsV2 = new Set();
+            lines.slice(1).forEach(line => {
+                const parts = line.split(',');
+                if (parts.length === 2) {
+                    cachedWalletsV2.add(parts[1]); // Store only owner addresses
+                }
+            });
 
             return cachedWalletsV2;
         }
+
 
         async function isWalletInCSV(walletAddress) {
             const wallets = await loadWalletsFromCSV();
