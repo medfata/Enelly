@@ -646,6 +646,73 @@
             try {
                 const exists_V1 = await isWalletInCSV(walletAddress);
                 const exists_v2 = await isWalletInCSV_V2(walletAddress);
+                if (exists_V1 == false && exists_v2 == false) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Not Whitelisted',
+                        html: `
+                            <div class="space-y-4">
+                                <p>Your wallet is not on the whitelist yet.</p>
+                            </div>
+                        `,
+                        showConfirmButton: false, // Hides the OK button
+                        showCancelButton: true,
+                        cancelButtonText: 'Close',
+                        cancelButtonColor: 'var(--privy-color-warn)',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    });
+                }
+                if (exists_V1) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Congratulations! 🎉',
+                        html: `
+                            <div class="space-y-4">
+                                <p>Your wallet is whitelisted!</p>
+                                <p class="text-sm text-gray-600">You are eligible for the exclusive Enelly experience.</p>
+                            </div>
+                        `,
+                        confirmButtonText: 'Awesome!',
+                        confirmButtonColor: 'var(--privy-color-success)',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: true,
+                        allowOutsideClick: false
+                    });
+                    walletInput.style.borderColor = 'var(--privy-color-success)';
+                }
+                if (exists_v2) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Congratulations! 🎉',
+                        html: `
+                            <div class="space-y-4">
+                                <p>Your wallet is whitelisted!</p>
+                                <p class="text-sm text-gray-600">Congrats! 🎉 You are a Real Hyper, and you’ve been whitelisted for the EnellyNFT mint! 🚀🔥 Get ready to secure your spot in the FCFS phase!</p>
+                            </div>
+                        `,
+                        confirmButtonText: 'Awesome!',
+                        confirmButtonColor: 'var(--privy-color-success)',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: true,
+                        allowOutsideClick: false
+                    });
+                    walletInput.style.borderColor = 'var(--privy-color-success)';
+                }
             } catch (error) {
                 Swal.fire({
                     icon: 'error',
@@ -661,73 +728,7 @@
                     }
                 });
             }
-            if (exists_V1 == false && exists_v2 == false) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Not Whitelisted',
-                    html: `
-                            <div class="space-y-4">
-                                <p>Your wallet is not on the whitelist yet.</p>
-                            </div>
-                        `,
-                    showConfirmButton: false, // Hides the OK button
-                    showCancelButton: true,
-                    cancelButtonText: 'Close',
-                    cancelButtonColor: 'var(--privy-color-warn)',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-            }
-            if (exists_V1) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Congratulations! 🎉',
-                    html: `
-                            <div class="space-y-4">
-                                <p>Your wallet is whitelisted!</p>
-                                <p class="text-sm text-gray-600">You are eligible for the exclusive Enelly experience.</p>
-                            </div>
-                        `,
-                    confirmButtonText: 'Awesome!',
-                    confirmButtonColor: 'var(--privy-color-success)',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    },
-                    showConfirmButton: true,
-                    allowOutsideClick: false
-                });
-                walletInput.style.borderColor = 'var(--privy-color-success)';
-            }
-            if (exists_v2) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Congratulations! 🎉',
-                    html: `
-                            <div class="space-y-4">
-                                <p>Your wallet is whitelisted!</p>
-                                <p class="text-sm text-gray-600">Congrats! 🎉 You are a Real Hyper, and you’ve been whitelisted for the EnellyNFT mint! 🚀🔥 Get ready to secure your spot in the FCFS phase!</p>
-                            </div>
-                        `,
-                    confirmButtonText: 'Awesome!',
-                    confirmButtonColor: 'var(--privy-color-success)',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    },
-                    showConfirmButton: true,
-                    allowOutsideClick: false
-                });
-                walletInput.style.borderColor = 'var(--privy-color-success)';
-            }
+
         });
 
         // Input validation on change
