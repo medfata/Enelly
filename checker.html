@@ -647,6 +647,7 @@
                                 <p>Your wallet is not on the whitelist yet.</p>
                             </div>
                         `,
+                        showConfirmButton: false, // Hides the OK button
                         showCancelButton: true,
                         cancelButtonText: 'Close',
                         cancelButtonColor: 'var(--privy-color-warn)',
@@ -657,10 +658,8 @@
                             popup: 'animate__animated animate__fadeOutUp'
                         }
                     });
-                    walletInput.style.borderColor = 'var(--privy-color-warn)';
                 }
             } catch (error) {
-
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
