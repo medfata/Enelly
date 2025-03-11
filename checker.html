@@ -612,24 +612,9 @@
                 return;
             }
 
-            // Show loading state with SweetAlert2
-            const loadingAlert = Swal.fire({
-                title: 'Checking Whitelist Status',
-                html: 'Please wait while we verify your wallet...',
-                allowOutsideClick: false,
-                showConfirmButton: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-
             try {
-                console.log('before calling the api')
                 // Simulate API delay
                 const exists = await isWalletInCSV(walletAddress);
-                
-                // Close loading alert
-                await loadingAlert.close();
                 
                 if (exists) {
                     Swal.fire({
@@ -660,10 +645,6 @@
                         html: `
                             <div class="space-y-4">
                                 <p>Your wallet is not on the whitelist yet.</p>
-                                <p class="text-sm text-gray-600">Join our Discord for whitelist opportunities!</p>
-                                <a href="#" class="inline-block mt-2 text-[var(--privy-color-accent)] hover:underline">
-                                    Join Discord Community →
-                                </a>
                             </div>
                         `,
                         showCancelButton: true,
@@ -681,8 +662,7 @@
                     walletInput.style.borderColor = 'var(--privy-color-warn)';
                 }
             } catch (error) {
-                console.log(error)
-                await loadingAlert.close();
+
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
