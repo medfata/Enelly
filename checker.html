@@ -530,7 +530,6 @@
             if (cachedWallets) return cachedWallets;
             const response = await fetch('./assets/ENELLY_FCFS_WL.csv');
             const csvText = await response.text();
-            console.log(csvText)
             
             // Split by new lines and remove the header
             const lines = csvText.split('\n').map(line => line.trim()).filter(line => line);
