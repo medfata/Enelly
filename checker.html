@@ -525,24 +525,22 @@
 </footer>
 
     <script>
-        // Base64 encoded whitelist array
-        const encodedAddresses = [
-            'MHgzQzQyOUNDYTZFRDJhYUUyODg3QkZFYmM1MWZBRTYwQjc2QURhZDk2',
-            'MHgxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4',
-            'MHhhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OWFiY2RlZjAx'
-        ];
-
-        // Function to decode and check address
-        function isWhitelisted(address) {
-            const normalizedAddress = address.toLowerCase();
-            return encodedAddresses.some(encoded => {
-                try {
-                    const decoded = atob(encoded).toLowerCase();
-                    return decoded === normalizedAddress;
-                } catch {
-                    return false;
-                }
-            });
+        let cachedWallets = null;
+        async function loadWalletsFromCSV() {
+            if (cachedWallets) return cachedWallets;
+            const response = await fetch('./assets/ENELLY_FCFS_WL.csv');
+            const csvText = await response.text();
+            console.log(csvText)
+            
+            // Split by new lines and remove the header
+            const lines = csvText.split('\n').map(line => line.trim()).filter(line => line);
+            cachedWallets = new Set(lines.slice(1)); // Remove header and store as Set
+            
+            return cachedWallets;
+        }
+        async function isWalletInCSV(walletAddress) {
+            const wallets = await loadWalletsFromCSV();
+            return wallets.has(walletAddress);
         }
 
         // Mobile menu functionality
@@ -626,16 +624,14 @@
             });
 
             try {
+                console.log('before calling the api')
                 // Simulate API delay
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                // Check if address is in whitelist
-                const whitelistStatus = isWhitelisted(walletAddress);
+                const exists = await isWalletInCSV(walletAddress);
                 
                 // Close loading alert
                 await loadingAlert.close();
                 
-                if (whitelistStatus) {
+                if (exists) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Congratulations! 🎉',
@@ -685,6 +681,7 @@
                     walletInput.style.borderColor = 'var(--privy-color-warn)';
                 }
             } catch (error) {
+                console.log(error)
                 await loadingAlert.close();
                 Swal.fire({
                     icon: 'error',
