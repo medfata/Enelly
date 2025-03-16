@@ -54,7 +54,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
@@ -71,7 +71,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
                 linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
                 linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
@@ -120,24 +120,32 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(0deg);
             }
+
             25% {
                 transform: translate(20px, 20px) rotate(5deg);
             }
+
             50% {
                 transform: translate(0, 40px) rotate(0deg);
             }
+
             75% {
                 transform: translate(-20px, 20px) rotate(-5deg);
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.5;
             }
+
             50% {
                 opacity: 0.8;
             }
@@ -147,6 +155,7 @@
             0% {
                 background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
             }
+
             100% {
                 background-position: 30px 0, 30px 15px, 45px -15px, 15px 0px;
             }
@@ -165,12 +174,11 @@
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
-            background: linear-gradient(to bottom, 
-                transparent,
-                var(--privy-color-success-light),
-                var(--privy-color-success-light),
-                transparent
-            );
+            background: linear-gradient(to bottom,
+                    transparent,
+                    var(--privy-color-success-light),
+                    var(--privy-color-success-light),
+                    transparent);
             box-shadow: 0 0 15px var(--privy-color-success-light);
             animation: pulseGlow 2s ease-in-out infinite;
         }
@@ -188,7 +196,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 
+            box-shadow:
                 0 8px 32px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
             transform-style: preserve-3d;
@@ -197,7 +205,7 @@
 
         .timeline-content:hover {
             transform: translateY(-5px) rotateX(5deg);
-            box-shadow: 
+            box-shadow:
                 0 12px 40px rgba(0, 0, 0, 0.15),
                 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
         }
@@ -215,18 +223,24 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.5;
             }
+
             50% {
                 opacity: 1;
             }
         }
 
         @keyframes markerPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 15px var(--privy-color-success-light);
             }
+
             50% {
                 box-shadow: 0 0 25px var(--privy-color-success-light);
             }
@@ -290,6 +304,9 @@
                     <a href="/vippass"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         VIP Pass</a>
+                    <a href="/airdrops"
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        Airdrops</a>
                     <a href="https://staking.enelly.xyz/"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Stake</a>
@@ -352,6 +369,9 @@
             <a href="/vippass"
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 VIP Pass</a>
+            <a href="/airdrops"
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                Airdrops</a>
             <a href="https://staking.enelly.xyz/"
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 Stake</a>
@@ -386,10 +406,14 @@
                     </h2>
                     <h3 class="text-lg font-semibold mb-3 text-[var(--privy-color-accent-dark)]">March 2025</h3>
                     <ul class="space-y-2 text-white">
-                        <li><span>•</span> <span class="line-through ">Build and engage the EnellyNFT community.</span></li>
-                        <li><span>•</span> <span class="line-through ">Launch our VIP Pass for early supporters for free using NFT2Me as the launchpad.</span></li>
-                        <li><span>•</span> <span class="line-through ">Collaborate with OG projects on Hyperliquid like Hypers and Liquina for mutual promotion.</span></li>
-                        <li><span>•</span> <span class="line-through ">Launch the EnellyNFT website with key details on utility and upcoming events.</span></li>
+                        <li><span>•</span> <span class="line-through ">Build and engage the EnellyNFT community.</span>
+                        </li>
+                        <li><span>•</span> <span class="line-through ">Launch our VIP Pass for early supporters for free
+                                using NFT2Me as the launchpad.</span></li>
+                        <li><span>•</span> <span class="line-through ">Collaborate with OG projects on Hyperliquid like
+                                Hypers and Liquina for mutual promotion.</span></li>
+                        <li><span>•</span> <span class="line-through ">Launch the EnellyNFT website with key details on
+                                utility and upcoming events.</span></li>
                     </ul>
                 </div>
             </div>
@@ -401,9 +425,11 @@
                     <h2 class="text-xl md:text-2xl font-bold mb-4 text-[var(--privy-color-accent-dark)]">
                         Phase 2: Mint & Launch
                     </h2>
-                    <h3 class="text-lg font-semibold mb-3 text-[var(--privy-color-accent-dark)]">Mid to Late March 2025</h3>
+                    <h3 class="text-lg font-semibold mb-3 text-[var(--privy-color-accent-dark)]">Mid to Late March 2025
+                    </h3>
                     <ul class="space-y-2 text-white">
-                        <li>• Launch our EnellyNFT mint for free for VIP Pass holders as an airdrop and with a significant discount for FCFS whitelisted individuals and the public.</li>
+                        <li>• Launch our EnellyNFT mint for free for VIP Pass holders as an airdrop and with a
+                            significant discount for FCFS whitelisted individuals and the public.</li>
                         <li>• Open staking for VIP Pass holders and EnellyNFT holders post-mint.</li>
                         <li>• Announce and distribute the first airdrop of Enelly tokens to holders.</li>
                     </ul>
@@ -417,7 +443,8 @@
                     <h2 class="text-xl md:text-2xl font-bold mb-4 text-[var(--privy-color-accent-dark)]">
                         Phase 3: Utility Expansion & Engagement
                     </h2>
-                    <h3 class="text-lg font-semibold mb-3 text-[var(--privy-color-accent-dark)]">Early to Mid April 2025</h3>
+                    <h3 class="text-lg font-semibold mb-3 text-[var(--privy-color-accent-dark)]">Early to Mid April 2025
+                    </h3>
                     <ul class="space-y-2 text-white">
                         <li>• Launch the raffle and quest platform for EnellyNFT holders.</li>
                         <li>• Activate the 10 XP per day reward system.</li>
@@ -446,8 +473,8 @@
         </div>
     </main>
 
-     <!-- Footer -->
-     <footer class="py-8 mt-12 text-[var(--privy-color-success-light)]">
+    <!-- Footer -->
+    <footer class="py-8 mt-12 text-[var(--privy-color-success-light)]">
         <div class="container mx-auto text-center">
             <div class="flex justify-center gap-6 mb-6">
                 <!-- X (Twitter) -->
@@ -506,4 +533,4 @@
     </script>
 </body>
 
-</html> 
+</html>

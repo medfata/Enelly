@@ -13,12 +13,12 @@
     <meta name="theme-color" content="#61dfff">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Enelly NFT - Rewards">
-    <meta property="og:description" content="Exclusive rewards for Enelly NFT holders">
+    <meta property="og:title" content="Enelly NFT - Airdrops">
+    <meta property="og:description" content="ENLY Token Airdrop Information">
     <meta property="og:image" content="./assets/enelly_logo.png">
-    <meta property="og:url" content="https://enellynft.xyz/rewards.html">
+    <meta property="og:url" content="https://enellynft.xyz/airdrops.html">
 
-    <title>Enelly - Rewards</title>
+    <title>Enelly - Airdrops</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
@@ -71,7 +71,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
                 linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
                 linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
@@ -123,24 +123,32 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) rotate(0deg);
             }
+
             25% {
                 transform: translate(20px, 20px) rotate(5deg);
             }
+
             50% {
                 transform: translate(0, 40px) rotate(0deg);
             }
+
             75% {
                 transform: translate(-20px, 20px) rotate(-5deg);
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.5;
             }
+
             50% {
                 opacity: 0.8;
             }
@@ -150,6 +158,7 @@
             0% {
                 background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
             }
+
             100% {
                 background-position: 30px 0, 30px 15px, 45px -15px, 15px 0px;
             }
@@ -189,46 +198,21 @@
             opacity: 0;
         }
 
-        /* Glowing button animation */
-        .submit-glow {
-            position: relative;
-            overflow: hidden;
+        /* Card styles */
+        .airdrop-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, var(--privy-color-accent) 0%, var(--privy-color-accent-light) 100%);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.1),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
         }
 
-        .submit-glow:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                0 4px 12px rgba(0, 0, 0, 0.1),
-                0 0 20px rgba(97, 223, 255, 0.3);
-        }
-
-        .submit-glow::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg,
-                    transparent,
-                    var(--privy-color-accent-light),
-                    transparent);
-            transform: rotate(45deg);
-            animation: glow 3s linear infinite;
-        }
-
-        @keyframes glow {
-            0% {
-                transform: translateX(-100%) rotate(45deg);
-            }
-            100% {
-                transform: translateX(100%) rotate(45deg);
-            }
+        .airdrop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -261,7 +245,8 @@
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         VIP Pass</a>
                     <a href="/airdrops"
-                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                        aria-current="page">•
                         Airdrops</a>
                     <a href="https://staking.enelly.xyz/"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
@@ -270,8 +255,7 @@
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Checker</a>
                     <a href="/rewards"
-                        class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
-                        aria-current="page">•
+                        class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                         Rewards</a>
                     <a href="/contact"
                         class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
@@ -326,7 +310,8 @@
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 VIP Pass</a>
             <a href="/airdrops"
-                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
+                class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
+                aria-current="page">•
                 Airdrops</a>
             <a href="https://staking.enelly.xyz/"
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
@@ -335,8 +320,7 @@
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 Checker</a>
             <a href="/rewards"
-                class="text-[var(--privy-color-success-dark)] text-sm font-medium hover:opacity-70 transition-opacity"
-                aria-current="page">•
+                class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
                 Rewards</a>
             <a href="/contact"
                 class="text-[var(--privy-color-success-dark)] text-sm font-light hover:opacity-70 transition-opacity">∘
@@ -348,12 +332,58 @@
     </div>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
-        <p class="text-white text-xl md:text-2xl font-bold mb-8 text-center">Exclusive Surprise for Top Holders!</p>
-        <p class="text-white text-sm md:text-base font-bold mb-8 text-center md:max-w-[40rem]">Thank you for being one of our top holders! Your incredible support of Enelly means the world to us. As a special token of appreciation, a gift is waiting for you. Click below to reveal your exclusive reward!</p>
-        <button class="submit-glow text-white px-8 py-3 rounded-xl font-semibold connectWalletBtn">
-            Connect Wallet
-        </button>
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">ENLY Token Airdrop</h1>
+
+        <div class="space-y-8">
+            <!-- What is ENLY Token Section -->
+            <div class="airdrop-card">
+                <h2 class="text-xl font-bold text-white mb-4">What is ENLY Token?</h2>
+                <p class="text-white">ENLY is the official token of the Enelly ecosystem, with a total supply of
+                    1,000,000 tokens. We are rewarding our loyal holders through an exclusive airdrop system.</p>
+            </div>
+
+            <!-- Airdrop Allocation Section -->
+            <div class="airdrop-card">
+                <h2 class="text-xl font-bold text-white mb-4">Airdrop Allocation</h2>
+                <ul class="text-white space-y-2">
+                    <li>VIP Pass Holders – 40% of the airdrop</li>
+                    <li>Enelly NFT Holders – 50% of the airdrop</li>
+                    <li>OG Collection Holders – 10% of the airdrop</li>
+                </ul>
+            </div>
+
+            <!-- How to Earn Section -->
+            <div class="airdrop-card">
+                <h2 class="text-xl font-bold text-white mb-4">How to Earn ENLY Tokens?</h2>
+                <p class="text-white mb-4">You can earn ENLY by staking your VIP Pass, Enelly NFTs, and OG Collection
+                    NFTs.</p>
+
+                <h3 class="text-lg font-bold text-white mb-2">Staking System</h3>
+                <p class="text-white mb-2">Simply hold your NFTs in your wallet to earn XP points daily:</p>
+                <ul class="text-white space-y-2 mb-4">
+                    <li>VIP Pass – 20 XP per day</li>
+                    <li>Enelly NFT – 10 XP per day</li>
+                    <li>OG Collection – 2 XP per day</li>
+                </ul>
+                <p class="text-white font-bold">1 XP = 10 ENLY Tokens</p>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div class="airdrop-card">
+                <h2 class="text-xl font-bold text-white mb-4">Leaderboard & Initial Airdrop</h2>
+                <ul class="text-white space-y-2">
+                    <li>The top 300 holders this month will receive the initial ENLY airdrop.</li>
+                    <li>The distribution will happen in 3 phases, rewarding those who continue holding and staking.</li>
+                </ul>
+            </div>
+
+            <!-- Get Ready Section -->
+            <div class="airdrop-card text-center">
+                <h2 class="text-xl font-bold text-white mb-4">Get Ready!</h2>
+                <p class="text-white">Start staking today and climb the leaderboard to secure your ENLY airdrop!</p>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -413,22 +443,7 @@
                 }, 300);
             });
         }
-
-        // Connect Wallet button functionality
-        const connectWalletBtn = document.querySelector('.connectWalletBtn');
-        let timeoutId;
-
-        if (connectWalletBtn) {
-            connectWalletBtn.addEventListener('click', () => {
-                connectWalletBtn.innerText = 'Coming Soon';
-                // Hide the message after 2 seconds
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                    connectWalletBtn.innerText = 'Connect Wallet';
-                }, 2000);
-            });
-        }
     </script>
 </body>
 
-</html> 
+</html>
