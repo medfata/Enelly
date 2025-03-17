@@ -200,19 +200,84 @@
 
         /* Card styles */
         .airdrop-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 1rem;
             padding: 2rem;
-            margin-bottom: 2rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(-5px);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(var(--privy-color-success-rgb), 0.2);
         }
 
-        .airdrop-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
+        .airdrop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(255, 255, 255, 0.1) 100%);
+            opacity: 1;
+        }
+
+        .airdrop-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 70%
+            );
+            opacity: 1;
+        }
+
+        .airdrop-card h2 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .airdrop-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent);
+            transform: scaleX(1);
+        }
+
+        .airdrop-card ul {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .airdrop-card ul li {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .airdrop-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--privy-color-success-light);
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -332,10 +397,10 @@
     </div>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
         <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">ENLY Token Airdrop</h1>
 
-        <div class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- What is ENLY Token Section -->
             <div class="airdrop-card">
                 <h2 class="text-xl font-bold text-white mb-4">What is ENLY Token?</h2>
@@ -377,8 +442,10 @@
                     <li>The distribution will happen in 3 phases, rewarding those who continue holding and staking.</li>
                 </ul>
             </div>
+        </div>
 
-            <!-- Get Ready Section -->
+        <!-- Get Ready Section - Full Width -->
+        <div class="mt-6">
             <div class="airdrop-card text-center">
                 <h2 class="text-xl font-bold text-white mb-4">Get Ready!</h2>
                 <p class="text-white">Start staking today and climb the leaderboard to secure your ENLY airdrop!</p>
